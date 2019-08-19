@@ -6,5 +6,4 @@ class User < ApplicationRecord
 
   has_many :bookings
   has_many :reviews, through: :bookings
-#   has_many :answers, through: :bookings, through: :reviews A voitr comment ça s'écrit
 end
