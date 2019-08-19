@@ -6,4 +6,6 @@ class User < ApplicationRecord
 
   has_many :bookings
   has_many :reviews, through: :bookings
+
+  enum progress: [:pending, :accepted, :refused]
 end
