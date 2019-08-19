@@ -10,10 +10,59 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_19_130124) do
+ActiveRecord::Schema.define(version: 2019_08_19_131807) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "answers", force: :cascade do |t|
+    t.text "content"
+    t.bigint "review_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "bookings", force: :cascade do |t|
+    t.integer "progress", default: 0
+    t.date "begin_at"
+    t.date "end_at"
+    t.bigint "user_id"
+    t.bigint "pack_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "packs", force: :cascade do |t|
+    t.integer "price"
+    t.string "description"
+    t.integer "quantity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.text "content"
+    t.integer "rating"
+    t.bigint "booking_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "schools", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.text "description"
+    t.string "email"
+    t.string "phone_number"
+    t.string "language"
+    t.string "album"
+    t.string "main_photo"
+    t.integer "level"
+    t.bigint "user_id"
+    t.bigint "pack_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
