@@ -1,11 +1,12 @@
-.btn-ghost {
-  color: #66A5AD;
-  border: 1px solid #66A5AD;
+.btn-flat {
+  color: white;
   padding: 8px 24px;
   border-radius: 50px;
-  font-weight: lighter;
+  background: #07575B;
+  transition: background 0.3s ease;
 }
 
-.btn-ghost:hover {
-  color: #C4DFE6;
+.btn-flat:hover {
+  background: #66A5AD;
+  color: white;
 }
