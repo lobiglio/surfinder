@@ -1,5 +1,11 @@
 class Booking < ApplicationRecord
   has_many :reviews
-  belong_to :user
-  belong_to :pack
+  belongs_to :user
+  belongs_to :pack
+
+  validates :begin_at, presence: true
+  validates :end_at, presence: true
+
+  enum progress: [:pending, :accepted, :refused]
+
 end
