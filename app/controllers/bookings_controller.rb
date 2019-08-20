@@ -11,14 +11,17 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @school = School.find(params[:school_id])
-    @booking.school = @school
-    @booking.save
-    redirect_to bookings_path
+    @booking.user = current_user
+    if @booking.save
+      redirect_to bookings_path
+    else
+      render :new
+    end
   end
 
   private
 
   def booking_params
-    params.require(:booking).permit(:begin_at, :end_at)
+    params.require(:booking).permit(:begin_at, :end_at, :quantity, :pack_id)
   end
 end

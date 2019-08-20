@@ -3,7 +3,7 @@
     <h2>Create your reservation</h2>
     <%= simple_form_for [@school, @booking] do |f| %>
     <div class="form-inputs">
-      <%= f.input :pack, collection: @school.packs, as: :radio_buttons %>
+      <%= f.input :pack_id, collection: @school.packs, as: :radio_buttons %>
       <%= f.input :quantity, label: "Number of persons" %>
       <%= f.input :begin_at %>
       <%= f.input :end_at %>
