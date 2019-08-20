@@ -1,8 +1,9 @@
 class SchoolsController < ApplicationController
   def index
-    @cocktails = Cocktail.all
+    @schools = School.all
   end
 
   def show
+    @school = School.find(params[:id])
   end
 end
