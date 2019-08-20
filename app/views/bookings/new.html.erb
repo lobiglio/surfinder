@@ -1,7 +1,9 @@
-<%= simple_form_for [@school, @booking] do |f| %>
-  <%= f.input :pack, collection: @school.packs, as: :radio_buttons %>
-  <%= f.input :quantity %>
-  <%= f.input :begin_at %>
-  <%= f.input :end_at %>
-  <%= f.submit "Reserve", class: "btn btn-primary" %>
-<% end %>
+<div class="container">
+  <%= simple_form_for [@school, @booking] do |f| %>
+    <%= f.input :pack, collection: @school.packs, as: :radio_buttons %>
+    <%= f.input :quantity %>
+    <%= f.input :begin_at %>
+    <%= f.input :end_at %>
+    <%= f.submit "Reserve", class: "btn btn-primary" %>
+  <% end %>
+</div>
