@@ -74,9 +74,9 @@ ActiveRecord::Schema.define(version: 2019_08_19_165349) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "name"
-    t.string "address"
-    t.string "avatar", default: "https://res.cloudinary.com/dcezznavh/image/upload/v1566231827/sa4zukx9nflvkeg5510x.jpg"
+    t.string "name", default: ""
+    t.string "address", default: ""
+    t.string "avatar", default: ""
     t.integer "role", default: 0
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
