@@ -1,2 +1,25 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner" style="background-image: linear-gradient(rgba(0,59,70,0.4),rgba(0,59,70,0.4)), url(<%= asset_path 'background-home.jpg' %>)">
+
+    <div class="container-home">
+      <div class="banner-text">
+        <h1><strong>SURFINDEЯ</strong></h1>
+        <p><i>Find the school that suits you.</i></p>
+      </div>
+      <div class = "container" id="input-home">
+      <%= simple_form_for :search, url: root_path, method: :get do |f| %>
+          <!-- Another variation with a button -->
+  <div class="d-flex justify-content-center">
+    <input type="text" class="form-control" id = "form-search-school" placeholder="Your location">
+    <div class="input-group-append">
+      <button class="btn btn-secondary" type="button">
+        <i class="fa fa-search"></i>
+        <button class="btn btn-secondary" type="button">All schools</button>
+    </div>
+  </div>
+
+</div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,1 +1,48 @@
-// Specific CSS for your home-page
+.has-search .form-control {
+    padding-left: 2.375rem;
+}
+
+.has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+}
+
+.container-home{
+  display:flex;
+  flex-direction: column;
+  text-align: center;
+  margin-right: 400px;
+  margin-left: 400px;
+}
+
+#input-home{
+margin-top: 64px;
+}
+
+.navbar-lewagon {
+  display:none;
+}
+
+#input-home > form > div > div > button:nth-child(2){
+  margin-left: 8px;
+  width: 152px;
+}
+
+#input-home > form > div > div > button{
+    background-color: #66A5AD;
+    border: 0px !important;
+    height: 38px;
+}
+
+#input-home > form > div > div > button:hover{
+  background-color: #07575B;
+  color: #66A5AD;
+  border: 1px #07575B solid;
+}
