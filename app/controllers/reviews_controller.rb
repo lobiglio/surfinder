@@ -7,9 +7,10 @@ class ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
     @booking = Booking.find(params[:booking_id])
+    @school = School.find(@booking.pack.school_id)
     @review.booking = @booking
     if @review.save
-      redirect_to bookings_path
+      redirect_to school_path(@school)
     else
       render :new
     end
