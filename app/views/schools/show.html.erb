@@ -1,5 +1,6 @@
+<div class="show-body">
 <div class="container">
-  <div class="row">
+  <div class="row school-content">
     <div class="col-8">
       <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
@@ -39,7 +40,6 @@
             <li> We speak: <%= @school.language %> </li>
             <li> Spot level: <%= @school.level %> </li>
           </ul>
-
         </div>
         <div class="tab-pane fade" id="packs" role="tabpanel" aria-labelledby="packs-tab">
           <ul>
@@ -67,12 +67,20 @@
       </div>
     </div>
     <div class="col-4">
-      <%= link_to "Book now!", new_school_booking_path(@school), class: "btn btn-flat" %>
+      <div class= "book-button">
+        <%= link_to "Book now!", new_school_booking_path(@school), class: "btn btn-flat" %>
+      </div>
+      <div class="card-product w-100">
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+        <div class="card-product-infos">
+          <ul>
+            <li> High tide: 12:5</li>
+            <li> Low tide: 18:50</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
-    <div>
-      <h2>Reviews will be here</h2>
-    </div>
-  </div>
+</div>
 </div>
 

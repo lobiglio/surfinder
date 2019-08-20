@@ -1,6 +1,7 @@
-// .carousel slide {
-//   padding-bottom: 16px;
-// }
+#carouselExampleSlidesOnly {
+  border: solid white;
+  border-radius: 4px;
+}
 
 .school-title {
   text-align: center;
@@ -18,9 +19,36 @@
 
 .nav-item a {
   color: #003B46;
+  background-color: #C4DFE6;
+}
 
+.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+  background-color: #66A5AD;
+}
+
+#myTabContent {
+  background-color: white;
 }
 
 .tab-content {
-  padding-top: 8px;
+  border: 1px solid #DEE2E6;
+  border-top: 0px;
+  height: 400px;
+  padding-top: 16px;
+}
+
+.school-content {
+  padding-bottom: 16px;
+}
+
+.tab-pane li {
+  margin-bottom: 8px;
+}
+
+.book-button {
+  padding-bottom: 32px;
+}
+
+.show-body {
+  background-color: #003B46;
 }
