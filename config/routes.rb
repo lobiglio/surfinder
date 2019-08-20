@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :schools, only: [ :index, :show] do
     resources :bookings, only: [ :new, :create]
   end
-  resources :bookings, only: :index
-  resources :reviews, only: [ :new, :create]
+  resources :bookings, only: :index do
+    resources :reviews, only: [ :new, :create]
+  end
 end
