@@ -8,6 +8,7 @@ class School < ApplicationRecord
   validates :main_photo, presence: true
   validates :language, presence: true
   validates :level, presence: true
+  validates :email, presence: true, uniqueness: true
 
   mount_uploader :main_photo, PhotoUploader
 end
