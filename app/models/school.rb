@@ -1,5 +1,5 @@
 class School < ApplicationRecord
-  belong_to :user
+  belongs_to :user
   has_many :packs
 
   validates :name, uniqueness: { scope: :address }

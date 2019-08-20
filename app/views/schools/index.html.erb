@@ -1,2 +1,11 @@
-<h1>Schools#index</h1>
-<p>Find me in app/views/schools/index.html.erb</p>
+<h2 id="titre-ecoles">ALL SCHOOLS</h2>
+<div class="schools_index">
+  <div class="row cards">
+    <% @schools.each do |school| %>
+
+    <div class="col card-category" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= cl_image_path sportif.photo %>')">
+      <%= link_to school.name, school_path(school)  %>
+    </div>
+    <% end %>
+  </div>
+</div>
