@@ -17,6 +17,9 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'faker'
 
+gem 'geocoder'
+gem 'pg_search'
+
 gem 'cloudinary', '~> 1.9.1'
 gem 'carrierwave', '~> 1.2'
 

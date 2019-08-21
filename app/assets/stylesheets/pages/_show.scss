@@ -1,0 +1,73 @@
+#carouselExampleSlidesOnly {
+  border: solid white;
+  border-radius: 4px;
+  margin-top: 16px;
+}
+
+.school-title {
+  color: white;
+  text-align: center;
+  margin-top: 24px;
+  margin-bottom: 16px;
+}
+
+.carousel-item {
+  height: 500px;
+}
+
+.carousel-item img{
+    height: 500px;
+}
+
+.show-body, .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+  color: #003B46;
+  background-color: #C4DFE6;
+}
+
+a {
+  color: white;
+}
+
+a:hover {
+  color: white;
+}
+
+.nav-tabs .nav-link:hover, .nav-tabs .nav-link:focus {
+  background-color: #66A5AD;
+}
+
+.nav-tabs .nav-link:hover, .nav-tabs .nav-link:focus {
+  border-color: transparenty;
+}
+
+.show-body, .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+  background-color: #66A5AD;
+}
+
+#myTabContent {
+  background-color: white;
+  border-radius: 4px;
+}
+
+.tab-content {
+  border: 1px solid #DEE2E6;
+  border-top: 0px;
+  height: 400px;
+  padding-top: 16px;
+}
+
+.school-content {
+  padding-bottom: 16px;
+}
+
+.tab-pane li {
+  margin-bottom: 8px;
+}
+
+.book-button {
+  padding-bottom: 32px;
+}
+
+.show-body {
+  background-color: #003B46;
+}

@@ -3,17 +3,22 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" type="image/png" href="https://res.cloudinary.com/dcezznavh/image/upload/v1566311414/feeyhmtliu6ictf3evz1.png">
     <title>SURFINDER</title>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= stylesheet_pack_tag 'application' %>
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
-    <%= render 'shared/navbar' %>
-    <%= render 'shared/flashes' %>
+    <div class = "page-site">
+    <%= render 'shared/navbar'%>
+    <%= render 'shared/flashes'%>
     <%= yield %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
+    </div>
+    <%= render 'shared/footer'%>
   </body>
 </html>

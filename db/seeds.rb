@@ -8,6 +8,7 @@
 require 'faker'
 
 puts "Cleaning DB"
+Pack.destroy_all
 School.destroy_all
 User.destroy_all
 
@@ -18,6 +19,7 @@ renter = User.create!(
   email: 'renter@example.com',
   address: Faker::Address.full_address,
   password: 'password',
+
   )
 
 owner1 = User.create!(
@@ -25,6 +27,8 @@ owner1 = User.create!(
   email: 'owner1@example.com',
   address: Faker::Address.full_address,
   password: 'password',
+
+
 )
 
 owner2 = User.create!(
@@ -32,6 +36,7 @@ owner2 = User.create!(
   email: 'owner2@example.com',
   address: Faker::Address.full_address,
   password: 'password',
+
 )
 
 owner3 = User.create!(

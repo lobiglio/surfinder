@@ -2,17 +2,17 @@
   <div class = "col-sm-6" id="formulaire">
     <h2>Create your reservation</h2>
     <%= simple_form_for [@school, @booking] do |f| %>
-      <div class="form-inputs">
-        <%= f.input :pack_id, collection: @school.packs, as: :radio_buttons %>
-        <%= f.input :quantity, label: "Number of persons" %>
-        <%= f.input :begin_at %>
-        <%= f.input :end_at %>
-      </div>
-      <div class="choice-btn">
-        <%= link_to 'Back', bookings_path, class: "btn btn-gradient" %>
-        <div class="form-actions">
-          <%= f.button :submit, class: "btn btn-flat" %>
-        </div>
+
+    <div class="form-inputs">
+      <%= f.input :pack_id, collection: @school.packs, as: :radio_buttons %>
+      <%= f.input :quantity, label: "Number of persons", collection: 1..8 %>
+      <%= f.input :begin_at, as: :string, required: false, input_html: {class: "datepicker"} %>
+      <%= f.input :end_at, as: :string, required: false, input_html: {class: "datepicker"} %>
+    </div>
+    <div class="choice-btn">
+      <%= link_to 'Back', school_path(@school), class: "btn btn-gradient" %>
+      <div class="form-actions">
+        <%= f.button :submit, class: "btn btn-flat" %>
       </div>
     <% end %>
   </div>
