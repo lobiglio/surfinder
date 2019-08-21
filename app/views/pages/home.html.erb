@@ -13,7 +13,8 @@
     <div class="input-group-append">
       <button class="btn btn-secondary" type="button">
         <i class="fa fa-search"></i>
-        <button class="btn btn-secondary" type="button">All schools</button>
+        <%= link_to '<button class="btn btn-secondary" type="button">All schools</button>'.html_safe, schools_path %>
+
     </div>
   </div>
 

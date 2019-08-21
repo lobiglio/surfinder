@@ -1,11 +1,27 @@
-<h2 id="titre-ecoles">ALL SCHOOLS</h2>
-<div class="schools_index">
-  <div class="row cards">
-    <% @schools.each do |school| %>
+<div
+id="map"
+style="width: 100%;
+height: 360px;"
+data-markers="<%= @markers.to_json %>"
+data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+></div>
 
-    <div class="col card-category" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= cl_image_path sportif.photo %>')">
-      <%= link_to school.name, school_path(school)  %>
+
+<div class="row justify-content-around">
+  <% @schools.each do |school| %>
+    <div class="flip">
+      <div class="front" style="background-image: url('<%= cl_image_path school.main_photo %>')">
+        <h1 class="text-shadow"><%=school.name%></hi>
+      </div>
+      <div class="back">
+        <h2><%=school.address%></h2>
+        <h2>Level: <%=school.level%></h2>
+        <p><%=school.description%></p>
+        <button type="button" class= "btn btn-primary"><%= link_to 'More infos...', school_path(school)  %></button>
+      </div>
     </div>
-    <% end %>
-  </div>
+  <% end %>
 </div>
+
+
+
