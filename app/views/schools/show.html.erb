@@ -58,11 +58,11 @@
         </div>
         <div class="tab-pane fade" id="forecast" role="tabpanel" aria-labelledby="forecast-tab">
           <ul>
-            <li> <%= @data %></li>
-            <li> High tide: 12:50</li>
-            <li> Low tide: 18:50</li>
-            <li> Swell: 1.5m | Period: 11s</li>
-            <li> Weather: Sunny </li>
+            <li> <%= @data.timestamp %> </li>
+            <li> <%= @data.swell %> </li>
+            <li> <%= @data.wind %> </li>
+            <li> <%= @data.condition %> </li>
+            <li> <%= @data.chart %> </li>
           </ul>
         </div>
       </div>
@@ -72,8 +72,9 @@
         <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
         <div class="card-product-infos">
           <ul>
-            <li> High tide: 12:5</li>
-            <li> Low tide: 18:50</li>
+            <% @school.reviews do |review| %>
+            <li><%= review.content %></li>
+            <li><%= review.rating %></li>
           </ul>
         </div>
       </div>
