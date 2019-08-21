@@ -43,10 +43,10 @@
         </div>
         <div class="tab-pane fade" id="packs" role="tabpanel" aria-labelledby="packs-tab">
           <ul>
-            <li> Pack: <%= @school.packs  %></li>
-            <li> 2 hous course for 1 person in group of max 8</li>
-            <li> 2 hours private course for 2 persons max</li>
-            <li> Family pack </li>
+            <li> Pack: <% @school.packs.each do |pack|%>
+              <%= pack.description %>
+              <% end %>
+            </li>
           </ul>
         </div>
         <div class="tab-pane fade" id="spot" role="tabpanel" aria-labelledby="spot-tab">
