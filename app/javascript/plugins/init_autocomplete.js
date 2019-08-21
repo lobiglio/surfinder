@@ -7,4 +7,10 @@ const initAutocomplete = () => {
   }
 };
 
-export { initAutocomplete };
+const initAutocomplete2 = () => {
+  const addressInput = document.getElementById('form-create-school');
+  if (addressInput) {
+    places({ container: addressInput });
+  }
+};
+export { initAutocomplete, initAutocomplete2 };

@@ -1,4 +1,5 @@
 import "bootstrap";
-import { initAutocomplete } from '../plugins/init_autocomplete';
+import { initAutocomplete, initAutocomplete2 } from '../plugins/init_autocomplete';
 
 initAutocomplete();
+initAutocomplete2();
