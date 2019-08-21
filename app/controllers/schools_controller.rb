@@ -16,15 +16,15 @@ class SchoolsController < ApplicationController
   def show
     @school = School.find(params[:id])
 
-    api = SurfForecastService.new("1175")
-    @data = api.call
+    # api = SurfForecastService.new("1175")
+    # @data = api.call
 
-    @review = Review.new
+    @reviews = @school.reviews
   end
-end
 
-private
+  private
 
-def set_school
-  @school = School.find(params[:id])
+  def set_school
+    @school = School.find(params[:id])
+  end
 end

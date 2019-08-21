@@ -58,26 +58,29 @@
         </div>
         <div class="tab-pane fade" id="forecast" role="tabpanel" aria-labelledby="forecast-tab">
           <ul>
-            <li> <%= @data.timestamp %> </li>
-            <li> <%= @data.swell %> </li>
-            <li> <%= @data.wind %> </li>
-            <li> <%= @data.condition %> </li>
-            <li> <%= @data.chart %> </li>
+            <li> <%#= @data.timestamp %> </li>
+            <li> <%#= @data.swell %> </li>
+            <li> <%#= @data.wind %> </li>
+            <li> <%#= @data.condition %> </li>
+            <li> <%#= @data.chart %> </li>
           </ul>
         </div>
       </div>
     </div>
     <div class="col-4">
+      <% @reviews.each do |review| %>
       <div class="card-product w-100">
         <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
         <div class="card-product-infos">
-          <ul>
-            <% @school.reviews do |review| %>
-            <li><%= review.content %></li>
-            <li><%= review.rating %></li>
-          </ul>
+            <p><% rating = review.rating %>
+           <% rating.times do %>
+            <i class="fas fa-star"></i>
+             <% end %>
+           </p>
+            <p><%= review.content %></p>
         </div>
       </div>
+      <% end %>
       <div class= "book-button">
         <%= link_to "Book now!", new_school_booking_path(@school), class: "btn btn-flat" %>
       </div>
