@@ -24,3 +24,19 @@
   background: #003B46;
   color: white;
 }
+
+.btn-flat {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 50px;
+  border: 1px solid;
+  border-color: #C4DFE6;
+  background: #07575B;
+  transition: background 0.3s ease;
+  margin-top: 40px;
+}
+
+.btn-flat:hover {
+  background: #66A5AD;
+  color: white;
+}
