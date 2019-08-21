@@ -1,2 +1,11 @@
 // Import page-specific CSS files here.
 @import "home";
+@import "show";
+
+#map{
+  z-index: 1;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+}
+
