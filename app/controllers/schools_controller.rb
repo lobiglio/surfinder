@@ -1,6 +1,7 @@
 class SchoolsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   def index
+
     @schools = School.geocoded
 
     @markers = @schools.map do |school|
@@ -15,6 +16,7 @@ class SchoolsController < ApplicationController
   end
 
   def show
+    @school = School.find(params[:id])
   end
 end
 
