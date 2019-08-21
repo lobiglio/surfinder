@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  enum role: { customer: 0, owner: 1 }
+
   has_many :bookings
   has_many :reviews, through: :bookings
 
