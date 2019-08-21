@@ -1,2 +1,6 @@
 <h1>Schools#show</h1>
 <p>Find me in app/views/schools/show.html.erb</p>
+
+<h2><%= @school.name %></h2>
+
+<%= link_to "Reservez", new_school_booking_path(@school) %>
