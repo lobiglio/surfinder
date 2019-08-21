@@ -18,7 +18,7 @@
         </li>
         <% if current_user.present? && current_user.school.present? %>
           <li class="nav-item">
-            <%= link_to "My school", owner_school_path(@school), class: "nav-link" %>
+            <%= link_to "My school", owner_school_path(current_user.school), class: "nav-link" %>
           </li>
         <% end %>
         <% if current_user.present? && current_user.school.nil? %>
