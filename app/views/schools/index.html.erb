@@ -1,7 +1,26 @@
-<h1>Schools#index</h1>
-<p>Find me in app/views/schools/index.html.erb</p>
-<ul>
+
+<div
+id="map"
+style="width: 100%;
+height: 360px;"
+data-markers="<%= @markers.to_json %>"
+data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+></div>
+
+
+<div class="row justify-content-around">
   <% @schools.each do |school| %>
-    <li><%= link_to school.name, school_path(school) %></li>
+    <div class="flip">
+      <div class="front" style="background-image: url('<%= cl_image_path school.main_photo %>')">
+        <h1 class="text-shadow"><%=school.name%></hi>
+      </div>
+      <div class="back">
+        <h2><%=school.address%></h2>
+        <h2>Level: <%=school.level%></h2>
+        <p><%=school.description%></p>
+        <button type="button" class= "btn btn-primary"><%= link_to 'More infos...', school_path(school)  %></button>
+      </div>
+    </div>
   <% end %>
-</ul>
+</div>
+

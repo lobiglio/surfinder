@@ -30,19 +30,30 @@ margin-top: 64px;
 //    display:none;
 // }
 
-#input-home > form > div > div > button:nth-child(2){
+#input-home > form > div > div > a > button{
+
   margin-left: 8px;
   width: 152px;
+  background-color: #66A5AD;
+  border: 0px !important;
+  height: 38px;
 }
 
 #input-home > form > div > div > button{
-    background-color: #66A5AD;
-    border: 0px !important;
-    height: 38px;
+  background-color: #66A5AD;
+  border: 0px !important;
+  height: 38px;
 }
 
-#input-home > form > div > div > button:hover{
+#input-home > form > div > div > button:hover {
   background-color: #07575B;
   color: #66A5AD;
   border: 1px #07575B solid;
 }
+
+#input-home > form > div > div > a > button:hover {
+  background-color: #07575B;
+  color: #66A5AD;
+  border: 1px #07575B solid;
+}
+
