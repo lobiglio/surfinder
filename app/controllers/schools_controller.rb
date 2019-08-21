@@ -1,9 +1,12 @@
 class SchoolsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
+
   def index
-
-    @schools = School.geocoded
-
+    if params[:search]
+      @schools = School.near(params[:search][:location], 150)
+    else
+      @schools = School.geocoded
+    end
     @markers = @schools.map do |school|
       {
         lat: school.latitude,
@@ -11,7 +14,6 @@ class SchoolsController < ApplicationController
         infoWindow: render_to_string(partial: "info_window", locals: { school: school }),
         image_url: helpers.asset_url('logo.png')
       }
-
     end
   end
 

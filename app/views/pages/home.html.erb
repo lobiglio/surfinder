@@ -6,15 +6,17 @@
         <p><i>Find the school that suits you.</i></p>
       </div>
       <div class = "container" id="input-home">
-      <%= simple_form_for :search, url: root_path, method: :get do |f| %>
+      <%= simple_form_for :search, url: schools_path, method: :get do |f| %>
           <!-- Another variation with a button -->
   <div class="d-flex justify-content-center">
-    <input type="text" class="form-control" id = "form-search-school" placeholder="Your location">
+    <!-- <input type="text" class="form-control" id = "form-search-school" placeholder="Your location"> -->
+    <%= f.input :location  %>
     <div class="input-group-append">
-      <button class="btn btn-secondary" type="button">
-        <i class="fa fa-search"></i>
+      <%= f.submit :Search%>
+<!-- <button class="btn btn-secondary" id="valid-address-btn" type="button">
+        <i class="fa fa-search"></i> -->
         <%= link_to '<button class="btn btn-secondary" type="button">All schools</button>'.html_safe, schools_path %>
-
+      </button>
     </div>
   </div>
 
