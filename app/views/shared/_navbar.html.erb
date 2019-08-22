@@ -16,6 +16,9 @@
         <li class="nav-item active">
           <%= link_to "Home", "/", class: "nav-link" %>
         </li>
+        <li class="nav-item">
+          <%= link_to "Schools", schools_path, class: "nav-link" %>
+        </li>
         <% if current_user.present? && current_user.school.present? %>
           <li class="nav-item">
             <%= link_to "My school", owner_school_path(current_user.school), class: "nav-link" %>
