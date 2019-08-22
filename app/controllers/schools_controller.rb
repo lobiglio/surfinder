@@ -16,8 +16,7 @@ class SchoolsController < ApplicationController
   def show
     @school = School.find(params[:id])
 
-    # api = SurfForecastService.new("1175")
-    # @data = api.call
+    @data = SurfForecastService.new("1531").call
 
     @reviews = @school.reviews
   end

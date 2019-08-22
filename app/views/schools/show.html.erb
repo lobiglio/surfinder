@@ -58,11 +58,11 @@
         </div>
         <div class="tab-pane fade" id="forecast" role="tabpanel" aria-labelledby="forecast-tab">
           <ul>
-            <li> <%#= @data.timestamp %> </li>
-            <li> <%#= @data.swell %> </li>
-            <li> <%#= @data.wind %> </li>
-            <li> <%#= @data.condition %> </li>
-            <li> <%#= @data.chart %> </li>
+            <li> <%= @data[:timestamp] %> </li>
+            <li> <%= @data[:swell] %> </li>
+            <li> <%= @data[:wind] %> </li>
+            <li> <%= @data[:condition] %> </li>
+            <li> <%= @data[:chart] %> </li>
           </ul>
         </div>
       </div>
