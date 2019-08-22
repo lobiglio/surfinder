@@ -13,7 +13,7 @@ class Owner::PacksController < ApplicationController
     @school = School.find(params[:school_id])
     @pack.school = @school
     if @pack.save
-      redirect_to school_path(@school)
+      redirect_to owner_school_path(@school)
     else
       render :new
     end
