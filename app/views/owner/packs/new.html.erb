@@ -1,0 +1,19 @@
+<div class="form min-vh-100">
+  <div class = "col-sm-6" id="formulaire">
+    <h2>Create your packs</h2>
+    <%= simple_form_for ["owner", @school, @pack] do |f| %>
+      <div class="form-inputs">
+        <%= f.input :title %>
+        <%= f.input :description %>
+        <%= f.input :price, :input_html => { :type => "number" } %>
+        <%= f.input :max_persons, :input_html => { :type => "number" } %>
+
+      </div>
+      <div class="choice-btn">
+        <div class="form-actions">
+          <%= f.button :submit, class: "btn btn-flat" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

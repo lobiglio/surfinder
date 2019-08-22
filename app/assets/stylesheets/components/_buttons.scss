@@ -40,3 +40,41 @@
   background: #66A5AD;
   color: white;
 }
+
+#input-home > form > div > div.input-group-append > input[type=submit]{
+  color: white;
+  padding: 6px 24px !important;
+  border: 1px solid #07575B !important;
+  border-color: #C4DFE6;
+  background: #07575B;
+  transition: background 0.3s ease;
+  margin-top: 0px;
+  height: 38px;
+  margin-left:1px;
+  border-radius: 2px;
+}
+
+#input-home > form > div > div.input-group-append > input[type=submit]:hover{
+  background:#C4DFE6;
+  color: #07575B;
+  border: 1px solid #07575B;
+  }
+
+#input-home > form > div > div.input-group-append > a > button{
+  color: white;
+  padding: 6px 24px !important;
+  border: 1px solid #07575B !important;
+  border-color: #C4DFE6;
+  background: #07575B;
+  transition: background 0.3s ease;
+  margin-top: 0px;
+  height: 38px;
+  margin-left:16px;
+  border-radius: 2px;
+}
+
+#input-home > form > div > div.input-group-append > a > button:hover{
+  background:#C4DFE6;
+  color: #07575B;
+  border: 1px solid #07575B !important;
+}

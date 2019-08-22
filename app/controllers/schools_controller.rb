@@ -1,8 +1,12 @@
 class SchoolsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
-  def index
-    @schools = School.geocoded
 
+  def index
+    if params[:search]
+      @schools = School.near(params[:search][:location], 150)
+    else
+      @schools = School.geocoded
+    end
     @markers = @schools.map do |school|
       {
         lat: school.latitude,

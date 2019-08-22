@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_20_134050) do
+ActiveRecord::Schema.define(version: 2019_08_22_065759) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,7 +59,6 @@ ActiveRecord::Schema.define(version: 2019_08_20_134050) do
     t.string "email"
     t.string "phone_number"
     t.string "language"
-    t.string "album"
     t.string "main_photo"
     t.integer "level"
     t.bigint "user_id"
@@ -68,6 +67,8 @@ ActiveRecord::Schema.define(version: 2019_08_20_134050) do
     t.float "latitude"
     t.float "longitude"
     t.string "spot"
+    t.string "photo1", default: "https://res.cloudinary.com/dcezznavh/image/upload/v1566309662/igm8jgcfcooplangqtvk.jpg"
+    t.string "photo2", default: "https://res.cloudinary.com/dcezznavh/image/upload/v1566308686/uhfk0fweanhc55ji9xi0.jpg"
   end
 
   create_table "users", force: :cascade do |t|
@@ -78,8 +79,8 @@ ActiveRecord::Schema.define(version: 2019_08_20_134050) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "name", default: ""
-    t.string "address", default: ""
+    t.string "name"
+    t.string "address"
     t.string "avatar", default: "https://res.cloudinary.com/dcezznavh/image/upload/v1566231827/sa4zukx9nflvkeg5510x.jpg"
     t.integer "role", default: 0
     t.index ["email"], name: "index_users_on_email", unique: true
