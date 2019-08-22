@@ -9,6 +9,7 @@
         <%= f.input :main_photo, label: "Main photo" %>
         <%= f.input :main_photo_cache, as: :hidden %>
         <%= f.input :language %>
+        <%= f.input :language, collection:["French", "English", "Spanish", "Deutsh", "Chinese"]%>
         <%= f.input :level, collection: 1..5 %>
         <%= f.input :email %>
       </div>
