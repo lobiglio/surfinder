@@ -1,6 +1,7 @@
 class Owner::SchoolsController < ApplicationController
   def show
     @school = current_user.school
+    @reviews = current_user.school.reviews
   end
 
   def new

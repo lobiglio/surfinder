@@ -48,7 +48,6 @@
                 <%= pack.description %> <br>
                 Limité à
                 <%= pluralize pack.max_persons, "personne" %> <br>
-                <%= link_to "Edit", edit_owner_school_pack_path(pack.school) %>
               </li>
             <% end %>
           </ul>
@@ -73,8 +72,7 @@
     <div class="col-4">
       <% @reviews.each do |review| %>
       <div class="card-product w-100">
-        <%#= @school.user.avatar %>
-        <img id="avatar" class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani" />
+        <img id="avatar" class="avatar" alt="avatar" src="<%= current_user.avatar %>" />
         <div id="card-info" class="card-product-infos">
             <p><% rating = review.rating %>
            <% rating.times do %>
