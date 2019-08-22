@@ -1,8 +1,32 @@
-<h1>Bookings#index</h1>
-<p>Find me in app/views/bookings/index.html.erb</p>
-<ul>
+<div class="show-body">
+<div class="container min-vh-100">
+
+  <h1 id="booking-title"> My Bookings</h1>
+
+  <div class="row">
+    <div class="col-8 booking-data" >
   <% @bookings.each do |booking| %>
-    <li><%= booking.progress %> <br>
-      <%= link_to "Add a review", new_booking_review_path(booking) %></li>
-  <% end %>
-</ul>
+
+      <div class="card" style="width: 30rem;height: 350px;">
+        <div class="card-body">
+          <h5 class="card-title">Booking details</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Your school : <%= booking.pack.school.name %></h6>
+          <p class="card-text">Total Price : <% number_of_days = (booking.end_at - booking.begin_at).to_i %><%= number_of_days * booking.pack.price * booking.quantity %> € </p>
+          <p class="card-text"> Your pack : <%= booking.pack.description %></p>
+          <p class="card-text"> School Number : <%= booking.pack.school.phone_number %></p>
+          <p class="card-text"> This reservation is <strong> <%= booking.progress %></strong>.</p>
+        </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-4">
+      <img class="booking-img" src="https://images.unsplash.com/photo-1520443240718-fce21901db79?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3334&q=80" style="width:100%" alt="">
+
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
