@@ -15,8 +15,8 @@
       </div>
 
       <div class="form-actions">
+        <%= link_to '<<', bookings_path, class: "btn btn-gradient" %>
         <%= f.button :submit, "Log in", class: "btn btn-gradient btn-ocean" %>
-        <%= link_to 'Back', bookings_path, class: "btn btn-gradient" %>
         <%= render "devise/shared/links" %>
       </div>
     <% end %>
