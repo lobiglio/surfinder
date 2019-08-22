@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   resources :bookings, only: :index
   resources :reviews, only: [ :new, :create]
   namespace :owner do
-    resources :schools, only: [:show, :new, :create]
+    resources :schools, only: [:show, :new, :create] do
+      resources :packs, only: [:new, :create]
+
+    end
   end
 end
