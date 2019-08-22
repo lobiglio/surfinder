@@ -27,11 +27,10 @@
       </div>
 
       <div class="form-actions">
+        <%= f.button :submit, "Sign up", class: "btn btn-gradient btn-ocean" %>
         <%= link_to 'Back', bookings_path, class: "btn btn-gradient" %>
-        <%= f.button :submit, "Sign up", class: "btn btn-flat" %> <br>
+        <%= render "devise/shared/links" %>
       </div>
     <% end %>
-
-    <%= render "devise/shared/links" %>
   </div>
 </div>
