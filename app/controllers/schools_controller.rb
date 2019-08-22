@@ -19,12 +19,15 @@ class SchoolsController < ApplicationController
 
   def show
     @school = School.find(params[:id])
-    # @review = Review.find(@school.pack.booking.review)
+
+    @data = SurfForecastService.new("1531").call
+
+    @reviews = @school.reviews
   end
-end
 
-private
+  private
 
-def set_school
-  @school = School.find(params[:id])
+  def set_school
+    @school = School.find(params[:id])
+  end
 end
