@@ -14,20 +14,6 @@
 .btn-flat {
   color: white;
   padding: 8px 24px;
-  border-radius: 4px;
-  background: #07575B;
-  border: 1px solid #C4DFE6;
-}
-
-
-.btn-flat:hover {
-  background: #003B46;
-  color: white;
-}
-
-.btn-flat {
-  color: white;
-  padding: 8px 24px;
   border-radius: 50px;
   border: 1px solid;
   border-color: #C4DFE6;
@@ -39,6 +25,10 @@
 .btn-flat:hover {
   background: #66A5AD;
   color: white;
+}
+
+.btn-ocean {
+  background: #07575B;
 }
 
 #input-home > form > div > div.input-group-append > input[type=submit]{

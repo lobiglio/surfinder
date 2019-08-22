@@ -3,7 +3,7 @@ class School < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_address?
 
   belongs_to :user
-  has_many :packs
+  has_many :packs, dependent: :destroy
 
   validates :name, uniqueness: { scope: :address }
   validates :address, presence: true
