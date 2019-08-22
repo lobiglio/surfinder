@@ -1,0 +1,28 @@
+<div class="form min-vh-100">
+  <div class = "col-sm-6" id="formulaire">
+    <h2>Create your school</h2>
+    <%= simple_form_for ["owner", @school] do |f| %>
+      <div class="form-inputs">
+        <%= f.input :name %>
+        <%= f.input :address, input_html: { id: 'form-create-school' } %>
+        <%= f.input :description %>
+        <%= f.input :main_photo, label: "Main photo" %>
+        <%= f.input :main_photo_cache, as: :hidden %>
+        <%= f.input :photo1, label: "Photo 1" %>
+        <%= f.input :photo1_cache, as: :hidden %>
+        <%= f.input :photo2, label: "Photo 2" %>
+        <%= f.input :photo2_cache, as: :hidden %>
+        <%= f.input :phone_number %>
+        <%= f.input :language, collection:["French", "English", "Spanish", "Deutsh", "Chinese"]%>
+        <%= f.input :level, collection: 1..5 %>
+        <%= f.input :email %>
+      </div>
+      <div class="choice-btn">
+        <%= link_to 'Back', owner_school_path(@school), class: "btn btn-gradient" %>
+        <div class="form-actions">
+          <%= f.button :submit, class: "btn btn-flat" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
