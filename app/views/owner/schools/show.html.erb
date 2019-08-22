@@ -47,7 +47,8 @@
               <li><strong><%= pack.title %></strong> - <%= pack.price %>€/personne <br>
                 <%= pack.description %> <br>
                 Limité à
-                <%= pluralize pack.max_persons, "personne" %>
+                <%= pluralize pack.max_persons, "personne" %> <br>
+                <%= link_to "Edit", edit_owner_school_pack_path(pack.school) %>
               </li>
             <% end %>
           </ul>
@@ -80,7 +81,7 @@
         </div>
       </div>
       <div class= "book-button">
-        <%= link_to "Edit your school", schools_path, class: "btn btn-flat" %>
+        <%= link_to "Edit your school", edit_owner_school_path(@school), class: "btn btn-flat" %>
       </div>
       <div class= "book-button">
         <%= link_to "Create a pack", new_owner_school_pack_path(@school), class: "btn btn-flat" %>

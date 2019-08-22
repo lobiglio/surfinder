@@ -19,6 +19,16 @@ class Owner::PacksController < ApplicationController
     end
   end
 
+  def edit
+    @pack = Pack.find(params[:id])
+  end
+
+  def update
+    @pack = Pack.find(params[:id])
+    @pack.update(pack_params)
+    redirect_to owner_school_path(@pack.school)
+  end
+
   private
 
   def pack_params

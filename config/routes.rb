@@ -8,8 +8,8 @@ Rails.application.routes.draw do
     resources :reviews, only: [ :new, :create]
   end
   namespace :owner do
-    resources :schools, only: [:show, :new, :create] do
-      resources :packs, only: [:new, :create]
+    resources :schools, only: [:show, :new, :create, :edit, :update] do
+      resources :packs, only: [:new, :create, :edit, :update]
 
     end
   end
