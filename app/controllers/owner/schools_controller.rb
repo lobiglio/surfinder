@@ -17,9 +17,21 @@ class Owner::SchoolsController < ApplicationController
     end
   end
 
+  def edit
+    @school = current_user.school
+  end
+
+  def update
+    @school = current_user.school
+    @school.update(school_params)
+    redirect_to owner_school_path(@school)
+  end
+
   private
 
   def school_params
-    params.require(:school).permit(:name, :address, :description, :main_photo, :language, :level, :email)
+    params.require(:school).permit(:name, :address,
+     :description, :main_photo, :language, :level,
+    :email, :photo1, :photo2, :phone_number)
   end
 end
