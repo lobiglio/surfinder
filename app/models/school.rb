@@ -19,4 +19,6 @@ class School < ApplicationRecord
   validates :email, presence: true, uniqueness: true
 
   mount_uploader :main_photo, PhotoUploader
+  mount_uploader :photo1, PhotoUploader
+  mount_uploader :photo2, PhotoUploader
 end
