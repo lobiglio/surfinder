@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   end
   namespace :owner do
     resources :schools, only: [:show, :new, :create, :edit, :update] do
-      resources :packs, only: [:new, :create]
+      resources :packs, only: [:new, :create, :edit, :update]
 
     end
   end

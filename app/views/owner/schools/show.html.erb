@@ -47,7 +47,8 @@
               <li><strong><%= pack.title %></strong> - <%= pack.price %>€/personne <br>
                 <%= pack.description %> <br>
                 Limité à
-                <%= pluralize pack.max_persons, "personne" %>
+                <%= pluralize pack.max_persons, "personne" %> <br>
+                <%= link_to "Edit", edit_owner_school_pack_path(pack.school) %>
               </li>
             <% end %>
           </ul>
