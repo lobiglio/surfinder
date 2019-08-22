@@ -58,11 +58,10 @@
         </div>
         <div class="tab-pane fade" id="forecast" role="tabpanel" aria-labelledby="forecast-tab">
           <ul>
-            <li> <%= @data[:timestamp] %> </li>
-            <li> <%= @data[:swell] %> </li>
-            <li> <%= @data[:wind] %> </li>
-            <li> <%= @data[:condition] %> </li>
-            <li> <%= @data[:chart] %> </li>
+            <li> Date: <%= @data[:timestamp] %> </li>
+            <li> Swell: <%= @data[:swell] %> </li>
+            <li> Wind: <%= @data[:wind] %> </li>
+            <li> Temperature: <%= @data[:condition] %> </li>
           </ul>
         </div>
       </div>
@@ -70,6 +69,7 @@
     <div class="col-4">
       <% @reviews.each do |review| %>
       <div class="card-product w-100">
+        <%#= @school.user.avatar %>
         <img id="avatar" class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani" />
         <div id="card-info" class="card-product-infos">
             <p><% rating = review.rating %>
