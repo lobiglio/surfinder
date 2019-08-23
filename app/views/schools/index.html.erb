@@ -1,32 +1,35 @@
 <div class="row">
   <div class=col-7>
-<div class="row justify-content-around">
-  <% @schools.each do |school| %>
-    <div class="flip">
-      <div class="front" style="background-image: url('<%= cl_image_path school.main_photo %>')">
-        <h1 class="text-shadow"><%=school.name%></hi>
-      </div>
-      <div class="back">
-        <p><%=school.address%></p>
-
-
-
-        <h5>Level:</h6> <h4 class= "level"> <% level = school.level %>
-           <% level.times do %>
-            <i class="fas fa-star"></i>
+    <div class="row justify-content-around">
+      <% @schools.each do |school| %>
+      <div class="flip">
+        <div class="front" style="background-image: url('<%= cl_image_path school.main_photo %>')">
+          <h1 class="text-shadow"><%=school.name%></hi>
+          </div>
+          <div class="back">
+            <div class = "level-card">
+            <h4 class= "level"> <% level = school.level %>
+             <% level.times do %>
+             <i class="fas fa-snowboarding"></i>
              <% end %>
-           </h4>
+           </div>
 
-        <%= link_to '<button class="btn btn btn-gradient btn-ocean"" type="button">More infos...</button>'.html_safe, school_path(school) %>
-      </div>
-    </div>
-  <% end %>
-</div>
-</div>
+           <p><%=school.address%></p>
 
-<div class="col-5" id="map" data-markers="<%= @markers.to_json %>"
-data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-></div>
-</div>
+
+
+
+
+           <%= link_to '<button class="btn btn btn-gradient btn-ocean" id="btn-card" type="button">More infos...</button>'.html_safe, school_path(school) %>
+         </div>
+       </div>
+       <% end %>
+     </div>
+   </div>
+
+   <div class="col-5" id="map" data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+    ></div>
+  </div>
 
 

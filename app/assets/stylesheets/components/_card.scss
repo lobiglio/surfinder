@@ -78,5 +78,10 @@ text-shadow: 1px 1px rgba(0, 0, 0, 0.04), 2px 2px rgba(0, 0, 0, 0.04), 3px 3px r
 }
 
 .level {
-  color:yellow;
+  color:#003B46
+}
+
+.level-card{
+  display:flex;
+  justify-content: flex-start;
 }
