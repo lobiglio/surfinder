@@ -2,6 +2,8 @@ class Owner::SchoolsController < ApplicationController
   def show
     @school = current_user.school
     @reviews = current_user.school.reviews
+
+    @data = SurfForecastService.new("1531").call
   end
 
   def new
