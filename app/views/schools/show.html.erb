@@ -70,7 +70,7 @@
       </div>
     </div>
     <div class="col-4">
-      <% @reviews.each do |review| %>
+      <% @school.reviews.each do |review| %>
       <div class="card-product w-100">
         <img id="avatar" class="avatar" alt="avatar" src="<%= review.booking.user.avatar %>" />
         <div id="card-info" class="card-product-infos">
