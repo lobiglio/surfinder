@@ -15,6 +15,7 @@
           <p class="card-text"> Your pack : <%= booking.pack.description %></p>
           <p class="card-text"> School Number : <%= booking.pack.school.phone_number %></p>
           <p class="card-text"> This reservation is <strong> <%= booking.progress %></strong>.</p>
+          <%= link_to "Add a review", new_booking_review_path(booking) %>
         </div>
         <% end %>
       </div>
