@@ -48,7 +48,7 @@
                 <%= pack.description %> <br>
                 Limited to
                 <%= pluralize pack.max_persons, "person" %> <br>
-                <%= link_to "Edit", edit_owner_school_pack_path(pack.school) %>
+                <%= link_to "Edit", edit_owner_school_pack_path(@school,pack) %>
               </li>
             <% end %>
           </ul>
