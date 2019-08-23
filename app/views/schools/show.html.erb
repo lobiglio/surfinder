@@ -72,7 +72,7 @@
     <div class="col-4">
       <% @reviews.each do |review| %>
       <div class="card-product w-100">
-        <img id="avatar" class="avatar" alt="avatar" src="<%= current_user.avatar %>" />
+        <img id="avatar" class="avatar" alt="avatar" src="<%= review.booking.user.avatar %>" />
         <div id="card-info" class="card-product-infos">
             <p><% rating = review.rating %>
            <% rating.times do %>
