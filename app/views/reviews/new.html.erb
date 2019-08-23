@@ -7,10 +7,8 @@
       <%= f.input :rating, collection: 1..5 %>
     </div>
     <div class="choice-btn">
+      <%= f.button :submit, class: "btn btn-gradient btn-ocean" %>
       <%= link_to 'Back', bookings_path, class: "btn btn-gradient" %>
-      <div class="form-actions">
-        <%= f.button :submit, class: "btn btn-flat" %>
-      </div>
     <% end %>
   </div>
 </div>
