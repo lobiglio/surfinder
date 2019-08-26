@@ -28,7 +28,7 @@
             <%= link_to "My school", owner_school_path(current_user.school), class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to "My bookings", owner_school_path(current_user.school), class: "nav-link" %>
+            <%= link_to "My bookings", owner_bookings_path, class: "nav-link" %>
           </li>
           <% elsif %>
           <% if current_user.present? && current_user.role == 'owner' && current_user.school.nil? %>
