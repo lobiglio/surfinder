@@ -99,7 +99,6 @@
         <div class= "book-button">
           <%= link_to "Book now!", new_school_booking_path(@school), class: "btn btn btn-gradient btn-ocean", id: "book-now"%>
         </div>
-        <% @school.reviews.each do |review| %>
           <% bests = @reviews.where(rating: 5) %>
           <% best = bests.sample %>
           <% unless best.nil? %>
@@ -115,7 +114,6 @@
               </div>
             </div>
           <% end %>
-        <% end %>
       </div>
     </div>
   </div>
