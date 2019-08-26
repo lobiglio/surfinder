@@ -13,6 +13,7 @@
         <%= f.input :avatar, label: "Photo" %>
         <%= f.input :avatar_cache, as: :hidden %>
         <%= f.input :email,
+                    placeholder: 'Email',
                     required: true,
                     autofocus: true,
                     input_html: { autocomplete: "email" }%>
@@ -21,6 +22,7 @@
                     hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
                     input_html: { autocomplete: "new-password" } %>
         <%= f.input :password_confirmation,
+                    placeholder: 'Password Confirmation*',
                     required: true,
                     input_html: { autocomplete: "new-password" } %>
         <%= f.input :role, collection: User.roles.keys.to_a, label: "Owner or customer?" %>
