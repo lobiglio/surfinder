@@ -78,6 +78,9 @@
            <% rating.times do %>
             <i class="fas fa-star"></i>
              <% end %>
+             <% (5-rating).times do %>
+                <i class="far fa-star"></i>
+                <% end %>
            </p>
             <p><%= review.content %></p>
         </div>
