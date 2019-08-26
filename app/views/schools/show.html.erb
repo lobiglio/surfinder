@@ -1,4 +1,4 @@
-<div class="show-body">
+≠<div class="show-body">
   <div class="container">
     <div class="row school-content">
       <div class="col-8">
@@ -35,6 +35,13 @@
         </ul>
         <div class="tab-content" id="myTabContent">
           <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="Home-tab">
+             <div class= "commodities">
+              <i class="fas fa-wheelchair"></i>
+              <i class="fas fa-dog"></i>
+              <i class="fas fa-utensils"></i>
+              <i class="fas fa-shower"></i>
+
+            </div>
             <ul>
               <li> <strong>Location :</strong> <%= @school.address  %> </li>
               <li><strong>Description :</strong><%= @school.description %> </li>
@@ -105,7 +112,7 @@
         <% unless @reviews.empty? %>
           <% bests = @reviews.where(rating: 5) %>
           <% if bests.empty? %>
-            <% review = @review.order(:rating).last %>
+            <% review = @reviews.order(:rating).last %>
             <div class="card-product w-100">
                 <img id="avatar" class="avatar" alt="avatar" src="<%= review.booking.user.avatar %>" />
                 <div id="card-info" class="card-product-infos">
