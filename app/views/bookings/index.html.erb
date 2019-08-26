@@ -1,25 +1,29 @@
 <div class="show-body">
   <div class="container min-vh-100">
 
-    <h1 id="booking-title"> My Bookings</h1>
+    <h1 id="booking-title" class="text-center pb-5"> My Bookings</h1>
 
     <div class="row">
-      <% @bookings.each do |booking| %>
-      <div class="card col-8  book-card">
-          <div class="card-body">
-            <h5 class="card-title">Booking details</h5>
-            <h6 class="card-subtitle mb-2 text-muted card-subtitle-booking">Your school : <strong> <%= booking.pack.school.name %> </strong></h6>
-            <p class="card-text1 card-date">From : <%= booking.begin_at %> to <%= booking.end_at %></p>
-            <p class="card-text1">Total Price : <% number_of_days = (booking.end_at - booking.begin_at).to_i %><%= number_of_days * booking.pack.price * booking.quantity %> € </p>
-            <p class="card-text"> Your pack : <%= booking.pack.description %></p>
-            <p class="card-text"> School Number : <%= booking.pack.school.phone_number %></p>
-            <p class="card-text"> This reservation is <strong> <%= booking.progress %></strong>.</p>
-            <%= link_to "Add a review", new_booking_review_path(booking) %>
+      <div class="cards col-7 row">
+        <% @bookings.each do |booking| %>
+          <div class="card col-11 book-card">
+            <div class="card-body">
+              <h5 class="card-title">Booking details</h5>
+              <h6 class="card-subtitle mb-2 text-muted card-subtitle-booking">Your school : <strong> <%= booking.pack.school.name %> </strong></h6>
+              <p class="card-text1 card-date">
+                From : <%= booking.begin_at %> to <%= booking.end_at %>
+
+              </p>
+              <p class="card-text1">Total Price : <% number_of_days = (booking.end_at - booking.begin_at).to_i %><%= number_of_days * booking.pack.price * booking.quantity %> € </p>
+              <p class="card-text"> Your pack : <%= booking.pack.description %></p>
+              <p class="card-text"> School Number : <%= booking.pack.school.phone_number %></p>
+              <p class="card-text"> This reservation is <strong> <%= booking.progress %></strong>.</p>
+              <%= link_to "Add a review", new_booking_review_path(booking) %>
+            </div>
           </div>
-        </div>
-      <% end %>
-      <div class="col-4">
-        <img class="booking-img" src="https://images.unsplash.com/photo-1520443240718-fce21901db79?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3334&q=80" style="width:100%" alt="">
+        <% end %>
+      </div>
+      <div class="booking-img col-5">
       </div>
     </div>
   </div>
