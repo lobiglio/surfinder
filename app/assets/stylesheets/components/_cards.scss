@@ -1,8 +1,11 @@
+.container-index {
+  padding: 15px;
+}
+
 .cards {
   overflow: scroll;
   height: 770px;
 }
-
 
 .card-product {
   overflow: hidden;
@@ -84,4 +87,8 @@
     height: 500px;
     margin-left: auto;
     margin-right: auto;
+}
+
+#schools-index{
+  text-align: center;
 }
