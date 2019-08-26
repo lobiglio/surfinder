@@ -83,6 +83,9 @@
                     <% rating.times do %>
                       <i class="fas fa-star"></i>
                     <% end %>
+                    <% (5-rating).times do %>
+                  <i class="far fa-star"></i>
+                <% end %>
                     </p>
                     <p><%= review.content %></p>
                     <% if review.answer.present? %>
@@ -109,6 +112,9 @@
                 <p><% rating = best.rating %>
                 <% rating.times do %>
                   <i class="fas fa-star"></i>
+                <% end %>
+                <% (5-rating).times do %>
+                  <i class="far fa-star"></i>
                 <% end %>
                 </p>
                 <p><%= best.content %></p>
