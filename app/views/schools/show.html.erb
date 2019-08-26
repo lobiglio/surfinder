@@ -93,22 +93,19 @@
       </div>
     </div>
     <div class="col-4">
-      <% @school.reviews.each do |review| %>
+      <% bests = @reviews.where(rating: 5) %>
+      <% best = bests.sample %>
       <div class="card-product w-100">
-        <img id="avatar" class="avatar" alt="avatar" src="<%= review.booking.user.avatar %>" />
+        <img id="avatar" class="avatar" alt="avatar" src="<%= best.booking.user.avatar %>" />
         <div id="card-info" class="card-product-infos">
-            <p><% rating = review.rating %>
+            <p><% rating = best.rating %>
            <% rating.times do %>
             <i class="fas fa-star"></i>
              <% end %>
-             <% (5-rating).times do %>
-                <i class="far fa-star"></i>
-                <% end %>
            </p>
-            <p><%= review.content %></p>
+            <p><%= best.content %></p>
         </div>
       </div>
-      <% end %>
       <div class= "book-button">
         <%= link_to "Book now!", new_school_booking_path(@school), class: "btn btn btn-gradient btn-ocean" %>
       </div>
