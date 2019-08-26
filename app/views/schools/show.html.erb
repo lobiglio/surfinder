@@ -51,6 +51,7 @@
               </li>
             <% end %>
           </ul>
+
         </div>
         <div class="tab-pane fade" id="spot" role="tabpanel" aria-labelledby="spot-tab">
           <ul>
@@ -71,6 +72,9 @@
       </div>
     </div>
     <div class="col-4">
+      <div class= "book-button">
+        <%= link_to "Book now!", new_school_booking_path(@school), class: "btn btn btn-gradient btn-ocean", id: "book-now"%>
+      </div>
       <% @school.reviews.each do |review| %>
       <div class="card-product w-100">
         <img id="avatar" class="avatar" alt="avatar" src="<%= review.booking.user.avatar %>" />
@@ -87,9 +91,6 @@
         </div>
       </div>
       <% end %>
-      <div class= "book-button">
-        <%= link_to "Book now!", new_school_booking_path(@school), class: "btn btn btn-gradient btn-ocean" %>
-      </div>
     </div>
   </div>
 </div>

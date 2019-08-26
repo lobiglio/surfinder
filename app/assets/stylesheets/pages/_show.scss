@@ -41,17 +41,16 @@ a:hover {
 }
 
 .show-body, .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
-  background-color: #66A5AD;
+  background-color: white;
 }
 
 #myTabContent {
   background-color: white;
-  border-radius: 4px;
 }
 
 .tab-content {
   border: 1px solid #DEE2E6;
-  border-top: 0px;
+  border-top: Opx;
   height: 400px;
   padding: 12px;
   padding-top: 32px;
@@ -70,7 +69,7 @@ a:hover {
 }
 
 .show-body {
-  background-color: #003B46;
+  background-color: #66A5AD;
 }
 
 #avatar {
@@ -92,6 +91,8 @@ a:hover {
   color: #66A5AD;
 }
 
-.card a {
-  color: #66A5AD;
+.nav-link {
+  color: white;
 }
+
+
