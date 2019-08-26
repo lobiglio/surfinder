@@ -47,6 +47,7 @@ a:hover {
 #myTabContent {
   background-color: white;
   border-radius: 4px;
+  height: 500px;
 }
 
 .tab-content {
@@ -101,10 +102,10 @@ a:hover {
 }
 
 #map {
-  background-color: blue;
   width: 206px;
   height: 206px;
   position: relative;
+  margin-top: 700px;
 }
 
 .compass {
@@ -112,7 +113,7 @@ a:hover {
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  border: 3px dashed skyblue;
+  // border: 3px dashed skyblue;
   position: relative;
   background-color: transparent;
 }
@@ -121,7 +122,7 @@ a:hover {
   position: absolute;
   width: 100%;
   height: 100%;
-  transform: rotate(20deg);
+  transform: rotate(50deg);
 }
 
 #swell {
@@ -132,11 +133,11 @@ a:hover {
 }
 
 #wind > .arrow {
-  border-bottom: 40px solid skyblue;
+  border-bottom: 40px solid orange;
 }
 
 #swell .arrow {
-   border-bottom: 40px solid orange;
+   border-bottom: 40px solid skyblue;
 }
 
 .arrow {
@@ -149,4 +150,10 @@ a:hover {
   border-right: 16px solid transparent;
 }
 
+#cursor-move {
+  width: 200px;
+  height: 30px;
+  border-radius: 15px;
+  border: 1px solid black;
+}
 
