@@ -87,7 +87,11 @@
                     <% end %>
                     </p>
                     <p><%= review.content %></p>
-                    <%= link_to "Answer", new_review_answer_path(review) %>
+                    <% if review.answer.present? %>
+                      <p id="answer"><strong>Your answer :</strong> <%= review.answer.content %></p>
+                    <% else %>
+                      <%= link_to "Answer", new_review_answer_path(review) %>
+                    <% end %>
                   </div>
                 </div>
               </li>
