@@ -106,6 +106,7 @@
     <div class="col-4">
       <% bests = @reviews.where(rating: 5) %>
       <% best = bests.sample %>
+      <% unless best.nil? %>
       <div class="card-product w-100">
         <img id="avatar" class="avatar" alt="avatar" src="<%= best.booking.user.avatar %>" />
         <div id="card-info" class="card-product-infos">
@@ -117,6 +118,7 @@
             <p><%= best.content %></p>
         </div>
       </div>
+      <% end %>
       <div class= "book-button">
         <%= link_to "Book now!", new_school_booking_path(@school), class: "btn btn btn-gradient btn-ocean" %>
       </div>
