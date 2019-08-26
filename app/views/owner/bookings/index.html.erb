@@ -1,24 +1,28 @@
 <div class="show-body">
   <div class="container min-vh-100">
-  <h1>My bookings</h1>
-
-<% @bookings.each do |booking| %>
-  <p>
-    Reservation : <%= booking.begin_at %> to <%= booking.end_at %><br>
-    <%= booking.progress %>
-  </p>
-
-<div class="card-product-infos-progress">
-  <p class="mb-2 resa-style" >This reservation is <%= booking.progress %></p>
-  <% if booking.pending?  %>
-    <%= link_to 'Accept', owner_booking_path(booking, progress: 1), method: :put, class: "btn btn-flat btn-accept" %>
-    <%= link_to 'Refuse', owner_booking_path(booking, progress: 2), method: :put, class: "btn btn-flat btn-refuse" %>
-  <% elsif booking.refused?%>
-    <%= link_to 'Accept', owner_booking_path(booking, progress: 1), method: :put, class: "btn btn-flat btn-accept" %>
-  <% else %>
-    <%= link_to 'Refuse', owner_booking_path(booking, progress: 2), method: :put, class: "btn btn-flat btn-refuse" %>
-  <% end %>
-</div>
-<% end %>
+    <h1 class="title-index">My bookings</h1>
+    <% @bookings.order(:begin_at).each do |booking| %>
+    <div class="card-booking">
+      <div class="card-booking-text">
+        <img src="<%= booking.user.avatar %>" alt="avatar person who reserved">
+        <div>
+          <p><%= booking.user.name %> reserved your school :<br>
+            to <%= booking.begin_at.strftime("%B %d, %Y") %> at <%= booking.end_at.strftime("%B %d, %Y") %><br></p>
+            <p><strong><%= booking.progress.capitalize %></strong></p>
+          </p>
+        </div>
+      </div>
+      <div class="card-product-infos-progress">
+        <% if booking.pending?  %>
+          <%= link_to 'Accept', owner_booking_path(booking, progress: 1), method: :put, class: "btn btn-gradient btn-accept" %>
+          <%= link_to 'Refuse', owner_booking_path(booking, progress: 2), method: :put, class: "btn btn-gradient btn-refuse" %>
+        <% elsif booking.refused?%>
+          <%= link_to 'Accept', owner_booking_path(booking, progress: 1), method: :put, class: "btn btn-gradient btn-accept" %>
+        <% else %>
+          <%= link_to 'Refuse', owner_booking_path(booking, progress: 2), method: :put, class: "btn btn-gradient btn-refuse" %>
+        <% end %>
+      </div>
+      </div>
+    <% end %>
   </div>
 </div>

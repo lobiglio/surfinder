@@ -36,3 +36,11 @@
   top: 0px;
   height: 100vh;
   }
+
+#map > div.mapboxgl-canvas-container.mapboxgl-interactive.mapboxgl-touch-drag-pan.mapboxgl-touch-zoom-rotate > canvas{
+  border-radius:8px;
+}
+
+.mapboxgl-canvas {
+  width: 580px !important;
+}

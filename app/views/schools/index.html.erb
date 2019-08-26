@@ -1,43 +1,38 @@
-<div class="row">
-  <div class=col-7>
-    <div class="row">
-      <% @schools.each do |school| %>
-      <div class="flip">
-        <div class="front" style="background-image: url('<%= cl_image_path school.main_photo %>')">
-          <h1 class="text-shadow"><%=school.name%></hi>
+<div class="container-index">
+  <div class="row d-flex justify-content-between">
+    <div class=col-7>
+      <div class="row d-flex justify-content-center">
+        <% @schools.each do |school| %>
+        <div class="flip">
+          <div class="front" style="background-image: url('<%= cl_image_path school.main_photo %>')">
+            <h1 class="text-shadow title-index"><%=school.name%></h1>
           </div>
-          <div class="back">
-            <div class = "level-card">
-              <p id="level"> Level:</p>
-              <div class= "d-flex justify-content-center">
-              <h4 class= "level"> <% level = school.level %>
-              <% level.times do %>
-                  <%= image_tag "ShakaFull.png", class: "shaka-icon" %>
-                 <% end %>
-              <h4 class= "level"> <% level = school.level %>
-              <% (5-level).times do %>
-                <%= image_tag "ShakaEmpty.png", class: "shaka-icon" %>
-              <% end %>
+            <div class="back">
+              <div class = "level-card">
+                <p id="level"> Level:</p>
+                <div class= "d-flex justify-content-center">
+                  <h4 class= "level"> <% level = school.level %>
+                  <% level.times do %>
+                    <%= image_tag "ShakaFull.png", class: "shaka-icon" %>
+                   <% end %>
+                  <h4 class= "level"> <% level = school.level %>
+                  <% (5-level).times do %>
+                    <%= image_tag "ShakaEmpty.png", class: "shaka-icon" %>
+                  <% end %>
+                </div>
               </div>
-             </div>
-
-
-           <p><%=school.address%></p>
-
-
-
-
-
-           <%= link_to '<button class="btn btn btn-gradient btn-ocean" id="btn-card" type="button">More infos...</button>'.html_safe, school_path(school) %>
+             <p><%=school.address%></p>
+             <%= link_to '<button class="btn btn btn-gradient btn-ocean" id="btn-card" type="button">More infos...</button>'.html_safe, school_path(school) %>
+            </div>
          </div>
+         <% end %>
        </div>
-       <% end %>
      </div>
-   </div>
 
-   <div class="col-5" id="map" data-markers="<%= @markers.to_json %>"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-    ></div>
+    <div class="col-5 " id="map" data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+
+    </div>
   </div>
 
-
+</div>
