@@ -86,6 +86,7 @@
                   <% end %>
                   </p>
                   <p><%= review.content %></p>
+                  <%= link_to "Answer", new_review_answer_path(review) %>
                 </div>
               </li>
             <% end %>
