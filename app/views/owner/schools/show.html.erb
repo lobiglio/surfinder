@@ -75,18 +75,24 @@
         <div class="tab-pane fade" id="reviews" role="tabpanel" aria-labelledby="reviews-tab">
           <ul>
             <% @reviews.each do |review| %>
-              <li class="review-card">
-                <div>
-                  <img id="avatar" class="avatar" alt="avatar" src="<%= review.booking.user.avatar %>" />
-                </div>
-                <div>
-                  <p><% rating = review.rating %>
-                  <% rating.times do %>
-                    <i class="fas fa-star"></i>
-                  <% end %>
-                  </p>
-                  <p><%= review.content %></p>
-                  <%= link_to "Answer", new_review_answer_path(review) %>
+              <li>
+                <div class="review-card">
+                  <div>
+                    <img id="avatar" class="avatar" alt="avatar" src="<%= review.booking.user.avatar %>" />
+                  </div>
+                  <div id="review-text">
+                    <p><% rating = review.rating %>
+                    <% rating.times do %>
+                      <i class="fas fa-star"></i>
+                    <% end %>
+                    </p>
+                    <p><%= review.content %></p>
+                    <% if review.answer.present? %>
+                      <p class="answer"><strong>Your answer :</strong> <%= review.answer.content %></p>
+                    <% else %>
+                      <%= link_to "Answer", new_review_answer_path(review) %>
+                    <% end %>
+                  </div>
                 </div>
               </li>
             <% end %>

@@ -85,6 +85,9 @@
                   <% end %>
                   </p>
                   <p><%= review.content %></p>
+                  <% if review.answer.present? %>
+                  <p class="answer"><strong>Surf school :</strong> <%= review.answer.content %> </p>
+                  <% end %>
                 </div>
               </li>
             <% end %>
