@@ -96,17 +96,19 @@
     <div class="col-4">
       <% bests = @reviews.where(rating: 5) %>
       <% best = bests.sample %>
-      <div class="card-product w-100">
-        <img id="avatar" class="avatar" alt="avatar" src="<%= best.booking.user.avatar %>" />
-        <div id="card-info" class="card-product-infos">
-            <p><% rating = best.rating %>
-           <% rating.times do %>
-            <i class="fas fa-star"></i>
-             <% end %>
-           </p>
-            <p><%= best.content %></p>
+      <% unless best.nil? %>
+        <div class="card-product w-100">
+          <img id="avatar" class="avatar" alt="avatar" src="<%= best.booking.user.avatar %>" />
+          <div id="card-info" class="card-product-infos">
+              <p><% rating = best.rating %>
+             <% rating.times do %>
+              <i class="fas fa-star"></i>
+               <% end %>
+             </p>
+              <p><%= best.content %></p>
+          </div>
         </div>
-      </div>
+      <% end %>
       <div class= "book-button">
         <%= link_to "Edit your school", edit_owner_school_path(@school), class: "btn btn btn-gradient btn-ocean" %>
       </div>

@@ -15,4 +15,7 @@ Rails.application.routes.draw do
   namespace :owner do
     resources :bookings, only: :index
   end
+  resources :reviews do
+    resources :answer, only: [ :new, :create ]
+  end
 end
