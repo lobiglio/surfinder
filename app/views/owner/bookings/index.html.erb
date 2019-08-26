@@ -5,4 +5,16 @@
     Reservation : <%= booking.begin_at %> to <%= booking.end_at %><br>
     <%= booking.progress %>
   </p>
+
+<div class="card-product-infos-progress">
+  <p class="mb-2 resa-style" >This reservation is <%= booking.progress %></p>
+  <% if booking.pending?  %>
+    <%= link_to 'Accept', owner_booking_path(booking, progress: 1), method: :put, class: "btn btn-flat btn-accept" %>
+    <%= link_to 'Refuse', owner_booking_path(booking, progress: 2), method: :put, class: "btn btn-flat btn-refuse" %>
+  <% elsif booking.refused?%>
+    <%= link_to 'Accept', owner_booking_path(booking, progress: 1), method: :put, class: "btn btn-flat btn-accept" %>
+  <% else %>
+    <%= link_to 'Refuse', owner_booking_path(booking, progress: 2), method: :put, class: "btn btn-flat btn-refuse" %>
+  <% end %>
+</div>
 <% end %>
