@@ -3,5 +3,6 @@ import "flatpickr/dist/flatpickr.min.css" // Note this is important!
 
 flatpickr(".datepicker", {
   altInput: true,
-  allowInput: true
+  allowInput: true,
+  minDate: "today"
 })
