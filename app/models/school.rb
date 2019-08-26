@@ -8,8 +8,6 @@ class School < ApplicationRecord
   has_many :bookings, through: :packs
   has_many :reviews, through: :bookings
 
-  has_many :packs, dependent: :destroy
-
   validates :name, uniqueness: { scope: :address }
   validates :address, presence: true
   validates :description, presence: true

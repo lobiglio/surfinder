@@ -10,7 +10,9 @@ Rails.application.routes.draw do
   namespace :owner do
     resources :schools, only: [:show, :new, :create, :edit, :update] do
       resources :packs, only: [:new, :create, :edit, :update]
-
     end
+  end
+  namespace :owner do
+    resources :bookings, only: :index
   end
 end

@@ -1,6 +1,6 @@
 class Pack < ApplicationRecord
-  has_many :bookings, dependent: :destroy
   belongs_to :school
+  has_many :bookings, dependent: :destroy
 
   validates :price, presence: true
   validates :description, presence: true
