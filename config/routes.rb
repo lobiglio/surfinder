@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   resources :bookings, only: :index do
     resources :reviews, only: [ :new, :create]
   end
+  resources :reviews do
+    resources :answers, only: [ :index, :new, :create ]
+  end
   namespace :owner do
     resources :schools, only: [:show, :new, :create, :edit, :update] do
       resources :packs, only: [:new, :create, :edit, :update]
@@ -14,8 +17,5 @@ Rails.application.routes.draw do
   end
   namespace :owner do
     resources :bookings, only: :index
-  end
-  resources :reviews do
-    resources :answer, only: [ :index, :new, :create ]
   end
 end
