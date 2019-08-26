@@ -29,6 +29,9 @@
         <li class="nav-item">
           <a class="nav-link" id="forecast-tab" data-toggle="tab" href="#forecast" role="tab" aria-controls="Forecast" aria-selected="false">Surf forecast</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" id="reviews-tab" data-toggle="tab" href="#reviews" role="tab" aria-controls="Reviews" aria-selected="false">Reviews</a>
+        </li>
       </ul>
       <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="Home-tab">
@@ -69,21 +72,49 @@
           </ul>
           <a href="http://magicseaweed.com"><img src="https://im-1-uk.msw.ms/msw_powered_by.png"></a>
         </div>
+        <div class="tab-pane fade" id="reviews" role="tabpanel" aria-labelledby="reviews-tab">
+          <ul>
+            <% @reviews.each do |review| %>
+              <li>
+                <div class="review-card">
+                  <div>
+                    <img id="avatar" class="avatar" alt="avatar" src="<%= review.booking.user.avatar %>" />
+                  </div>
+                  <div id="review-text">
+                    <p><% rating = review.rating %>
+                    <% rating.times do %>
+                      <i class="fas fa-star"></i>
+                    <% end %>
+                    </p>
+                    <p><%= review.content %></p>
+                    <% if review.answer.present? %>
+                      <p class="answer"><strong>Your answer :</strong> <%= review.answer.content %></p>
+                    <% else %>
+                      <%= link_to "Answer", new_review_answer_path(review) %>
+                    <% end %>
+                  </div>
+                </div>
+              </li>
+            <% end %>
+          </ul>
+        </div>
       </div>
     </div>
     <div class="col-4">
-      <% @reviews.each do |review| %>
-      <div class="card-product w-100">
-        <img id="avatar" class="avatar" alt="avatar" src="<%= review.booking.user.avatar %>" />
-        <div id="card-info" class="card-product-infos">
-            <p><% rating = review.rating %>
-           <% rating.times do %>
-            <i class="fas fa-star"></i>
-             <% end %>
-           </p>
-            <p><%= review.content %></p>
+      <% bests = @reviews.where(rating: 5) %>
+      <% best = bests.sample %>
+      <% unless best.nil? %>
+        <div class="card-product w-100">
+          <img id="avatar" class="avatar" alt="avatar" src="<%= best.booking.user.avatar %>" />
+          <div id="card-info" class="card-product-infos">
+              <p><% rating = best.rating %>
+             <% rating.times do %>
+              <i class="fas fa-star"></i>
+               <% end %>
+             </p>
+              <p><%= best.content %></p>
+          </div>
         </div>
-      </div>
       <% end %>
       <div class= "book-button">
         <%= link_to "Edit your school", edit_owner_school_path(@school), class: "btn btn btn-gradient btn-ocean" %>
