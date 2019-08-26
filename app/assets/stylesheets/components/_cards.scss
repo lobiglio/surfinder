@@ -85,3 +85,25 @@
     margin-left: auto;
     margin-right: auto;
 }
+
+.card-booking {
+  background-color: white;
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vh;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 4px;
+  padding: 12px;
+}
+
+.card-booking-text {
+  display: flex;
+  align-items: center;
+}
+
+.card-booking-text img {
+  width: 72px;
+  margin-right: 8px;
+}
