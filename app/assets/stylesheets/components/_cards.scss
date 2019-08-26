@@ -1,8 +1,11 @@
+.container-index {
+  padding: 15px;
+}
+
 .cards {
   overflow: scroll;
   height: 770px;
 }
-
 
 .card-product {
   overflow: hidden;
@@ -106,4 +109,7 @@
 .card-booking-text img {
   width: 72px;
   margin-right: 8px;
+
+#schools-index{
+  text-align: center;
 }
