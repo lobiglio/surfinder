@@ -11,3 +11,6 @@ import { mouseMove } from './weather_chart.js';
 // initAutocomplete();
 // initAutocomplete2();
 mouseMove();
+
+
+
