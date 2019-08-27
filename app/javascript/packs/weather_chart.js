@@ -3,7 +3,8 @@ const mouseMove = () => {
   const cursor = document.getElementById("cursor-move");
 
   const windArray = JSON.parse(cursor.dataset.wind);
-  const timestamps = Object.keys(windArray);
+  const swellArray = JSON.parse(cursor.dataset.swell);
+  const timestamps = Object.keys(windArray, swellArray);
   const minTime = Number(timestamps[0]);
   const maxTime = Number(timestamps[39]);
   const minPixel = 172;
@@ -19,15 +20,14 @@ const mouseMove = () => {
     console.log(a * x + b);
     const nearTime = findNearTime((a * x + b), timestamps);
     console.log(nearTime);
-    console.log(windArray[nearTime.toString()]);
+    // console.log(windArray[nearTime.toString()]);
+    console.log(swellArray[nearTime.toString()]);
 
-    windElement.style.transform = `rotate(${windArray[nearTime.toString()]}deg)`;
+    // windElement.style.transform = `rotate(${windArray[nearTime.toString()]}deg)`;
     // swellElement.style.transform = `rotate(${(x - 172) * 360.0/200 + 20 }deg)`;
   });
 };
 
-
-// const a = [1, 2, 3, 4, 5];
 
 const findNearTime = (myTime, timestamps) => {
   let diffAbsMin = 100000;

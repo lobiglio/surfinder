@@ -22,6 +22,7 @@ class SchoolsController < ApplicationController
 
     @data = SurfForecastService.new("1531").call
     @wind = SurfForecastService.new("1531").call_wind
+    @swell = SurfForecastService.new("1531").call_swell
     @reviews = @school.reviews
   end
 

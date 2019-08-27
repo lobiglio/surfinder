@@ -70,6 +70,7 @@
             <li> Temperature: <%= @data[:condition] %> </li>
           </ul>
           <div id="cursor-move" data-wind="<%= @wind.to_json %>"></div>
+          <div id="cursor-move" data-swell="<%= @swell.to_json %>"></div>
            <div div onmousemove="myFunction(event)"></div>
           <a href="http://magicseaweed.com"><img src="https://im-1-uk.msw.ms/msw_powered_by.png"></a>
         </div>
