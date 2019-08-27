@@ -23,4 +23,9 @@ class SurfForecastService
     @url = "http://magicseaweed.com/api/e80fd637037c7379137bc52c070ca111/forecast/?spot_id=1531&fields=timestamp,swell.components.primary.direction"
     JSON.parse(HTTP.get(@url).to_s).map { |l| [l["timestamp"], (l["swell"]["components"]["primary"]["direction"]).to_i] }.to_h
   end
+
+  def call_height
+    @url = "http://magicseaweed.com/api/e80fd637037c7379137bc52c070ca111/forecast/?spot_id=1531&fields=timestamp,swell.components.primary.height"
+    JSON.parse(HTTP.get(@url).to_s).map { |l| [Time.at(l["timestamp"]).to_formatted_s(:short), (l["swell"]["components"]["primary"]["height"])] }.to_h
+  end
 end

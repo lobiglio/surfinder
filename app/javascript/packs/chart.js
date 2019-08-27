@@ -3,43 +3,37 @@ import Highcharts from 'highcharts';
 require('highcharts/modules/exporting')(Highcharts);
 
 
+const cursor = document.getElementById("cursor-move");
+
+// const windArray = JSON.parse(cursor.dataset.wind);
+// const swellArray = JSON.parse(cursor.dataset.swell);
+const swellArray = JSON.parse(cursor.dataset.height);
+const swellHeight = Object.values(swellArray);
+const swellTime = Object.keys(swellArray);
 Highcharts.chart('chart-container', {
     chart: {
         type: 'column'
     },
     title: {
-        text: 'Monthly Average Rainfall'
+        text: 'Surf forecast'
     },
     subtitle: {
-        text: 'Source: WorldClimate.com'
+        text: 'Source: magicseaweed.com'
     },
     xAxis: {
-        categories: [
-            'Jan',
-            'Feb',
-            'Mar',
-            'Apr',
-            'May',
-            'Jun',
-            'Jul',
-            'Aug',
-            'Sep',
-            'Oct',
-            'Nov',
-            'Dec'
-        ],
+        categories: swellTime,
         crosshair: true
     },
     yAxis: {
         min: 0,
         title: {
-            text: 'Rainfall (mm)'
+            text: 'Height (m)'
         }
     },
     tooltip: {
         headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
         pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-            '<td style="padding:0"><b>{point.y:.1f} mm</b></td><td>Coco</td></tr>',
+            '<td style="padding:0"><b>{point.y:.1f} m</b></td></tr>',
         footerFormat: '</table>',
         shared: true,
         useHTML: true
@@ -51,8 +45,8 @@ Highcharts.chart('chart-container', {
         }
     },
     series: [{
-        name: 'Tokyo',
-        data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]
+        name: 'Swell Height',
+        data: swellHeight
 
     }]
 });
