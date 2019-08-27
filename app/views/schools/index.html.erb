@@ -5,7 +5,7 @@
         <% @schools.each do |school| %>
         <div class="flip">
           <div class="front" style="background-image: url('<%= cl_image_path school.main_photo %>')">
-            <h1 class="text-shadow"><%=school.name%></h1>
+            <h1 class="text-shadow title-index"><%=school.name%></h1>
           </div>
             <div class="back">
               <div class = "level-card">
