@@ -107,12 +107,14 @@
       </div>
       <div class="col-4">
         <div class= "book-button">
+          <div class = "book-now-btn">
           <%= link_to "Book now!", new_school_booking_path(@school), class: "btn btn btn-gradient btn-ocean", id: "book-now"%>
+          </div>
         </div>
         <% unless @reviews.empty? %>
           <% bests = @reviews.where(rating: 5) %>
           <% if bests.empty? %>
-            <% review = @review.order(:rating).last %>
+            <% review = @reviews.order(:rating).last %>
             <div class="card-product w-100">
                 <img id="avatar" class="avatar" alt="avatar" src="<%= review.booking.user.avatar %>" />
                 <div id="card-info" class="card-product-infos">
