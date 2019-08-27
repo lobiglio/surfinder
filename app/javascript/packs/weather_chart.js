@@ -7,9 +7,9 @@ const mouseMove = () => {
 
   const timestamps = Object.keys(windArray, swellArray);
   const minTime = Number(timestamps[0]);
-  const maxTime = Number(timestamps[7]);
+  const maxTime = Number(timestamps[39]);
   const minPixel = 172;
-  const maxPixel = 372;
+  const maxPixel = 876;
   const a = ( maxTime - minTime ) * 1.0 / ( maxPixel - minPixel );
   const b = minTime - a * minPixel;
   // console.log(maxTime);
@@ -18,6 +18,7 @@ const mouseMove = () => {
   // console.dir(cursor);
   cursor.addEventListener("mousemove", function(event) {
     const x = event.clientX;
+    console.log(x)
     // console.log(a * x + b);
     const nearTime = findNearTime((a * x + b), timestamps);
     console.log(nearTime);

@@ -8,9 +8,9 @@ import { mouseMove } from './weather_chart.js';
 import "./chart.js";
 
 
-// initMapbox();
-// initAutocomplete();
-// initAutocomplete2();
+initMapbox();
+initAutocomplete();
+initAutocomplete2();
 mouseMove();
 
 

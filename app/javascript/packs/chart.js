@@ -62,7 +62,7 @@ Highcharts.chart('wind-chart-container', {
         type: 'column'
     },
     title: {
-        text: 'Surf forecast'
+        text: 'Wind forecast'
     },
     subtitle: {
         text: 'Source: magicseaweed.com'
@@ -74,7 +74,7 @@ Highcharts.chart('wind-chart-container', {
     yAxis: {
         min: 0,
         title: {
-            text: 'Height (m)'
+            text: 'Speed (kph)'
         }
     },
     tooltip: {
