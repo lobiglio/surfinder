@@ -119,20 +119,7 @@
               <div class="card-product w-100">
                   <img id="avatar" class="avatar" alt="avatar" src="<%= review.booking.user.avatar %>" />
                   <div id="card-info" class="card-product-infos">
-                    <p><% rating = review.rating %>
-                    <% rating.times do %>
-                      <i class="fas fa-star"></i>
-                    <% end %>
-                    </p>
-                    <p><%= review.content %></p>
-                  </div>
-                </div>
-            <% else %>
-              <% best = bests.sample %>
-              <div class="card-product w-100">
-                <img id="avatar" class="avatar" alt="avatar" src="<%= best.booking.user.avatar %>" />
-                <div id="card-info" class="card-product-infos">
-                  <p><% rating = best.rating %>
+                    <p><% rating = best.rating %>
                 <% rating.times do %>
                   <i class="fas fa-star"></i>
                 <% end %>
@@ -143,8 +130,8 @@
                 <%= best.created_at.strftime("%B %Y") %> <br>
                 </p>
                 <p><%= best.content %></p>
+                  </div>
                 </div>
-              </div>
           <% else %>
             <% best = bests.sample %>
             <div class="card-product w-100">
@@ -163,6 +150,7 @@
                 <p><%= best.content %></p>
               </div>
             </div>
+            <% end %>
           <% end %>
         <div class= "book-button">
           <div class = "book-now-btn">
