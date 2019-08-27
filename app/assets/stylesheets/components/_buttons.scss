@@ -88,6 +88,7 @@
   animation-iteration-count: infinite;
   animation-timing-function: ease-in;
   cursor: pointer;
+
 }
 #book-now:hover {
   animation-name: shakeAnim;
@@ -117,8 +118,7 @@
 
 .book-button{
   text-align: center;
-  position: sticky;
-  top: 0px;
+
 }
 
 .btn-accept {
@@ -127,4 +127,18 @@
 
 .btn-refuse {
   background-color: #b5525c;
+}
+
+.book-now-btn{
+    position:fixed;
+    text-align: center;
+    width:35%;
+    z-index:100;
+}
+
+.fix-top-book-button{
+    position:fixed;
+    text-align: center;
+    width:35%;
+    z-index:100;
 }
