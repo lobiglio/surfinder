@@ -4,30 +4,22 @@
   <%= link_to new_user_session_path, class: "navbar-brand pull-right" do %>
     <%= image_tag "avatar-login.png"%>
     <% end %>
-  </div>
-
-    <div class="container-home">
-      <div class="banner-text">
-        <h1><strong>SURFINDEЯ</strong></h1>
-        <p><i>Find the school that suits you.</i></p>
-      </div>
-      <div class = "container" id="input-home">
-      <%= simple_form_for :search, url: schools_path, method: :get do |f| %>
-          <!-- Another variation with a button -->
-  <div class="d-flex justify-content-center">
-    <!-- <input type="text" class="form-control" id = "form-search-school" placeholder="Your location"> -->
-    <%= f.input :location, label: false  %>
-    <div class="input-group-append">
-      <%= f.submit :Search%>
-<!-- <button class="btn btn-secondary" id="valid-address-btn" type="button">
-        <i class="fa fa-search"></i> -->
-        <%= link_to '<button class="btn btn-secondary" type="button">All schools</button>'.html_safe, schools_path %>
-      </button>
-    </div>
-  </div>
 </div>
-        </div>
-      <% end %>
+
+<div class="container-home">
+  <div class="banner-text">
+    <h1><strong>SURFINDER</strong></h1>
+    <p><i>Find the school that suits you.</i></p>
+  </div>
+  <div class = "container" id="input-home">
+    <%= simple_form_for :search, url: schools_path, method: :get do |f| %>
+    <div class="d-flex justify-content-center">
+      <%= f.input :location, label: false  %>
+      <div class="input-group-append">
+        <%= f.submit :Search%>
+        <%= link_to '<button class="btn btn-secondary" type="button">All schools</button>'.html_safe, schools_path %>
+            <% end %>
+      </div>
     </div>
   </div>
 </div>
