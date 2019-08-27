@@ -4,12 +4,13 @@
   <%= link_to new_user_session_path, class: "navbar-brand pull-right" do %>
     <%= image_tag "avatar-login.png"%>
     <% end %>
-  </div>
+</div>
 
-    <div class="container-home">
-      <div class="banner-text text-center">
-        <h1><strong>SURFINDEЯ</strong></h1>
-        <p><i>Find the school that suits you.</i></p>
+
+<div class="container-home">
+  <div class="banner-text">
+    <h1><strong>SURFINDER</strong></h1>
+    <p><i>Find the school that suits you.</i></p>
       </div>
       <div class = "container" id="input-home">
       <%= simple_form_for :search, url: schools_path, method: :get do |f| %>
@@ -25,9 +26,15 @@
       </button>
     </div>
   </div>
-</div>
-        </div>
-      <% end %>
+  <div class = "container" id="input-home">
+    <%= simple_form_for :search, url: schools_path, method: :get do |f| %>
+    <div class="d-flex justify-content-center">
+      <%= f.input :location, label: false  %>
+      <div class="input-group-append">
+        <%= f.submit :Search%>
+        <%= link_to '<button class="btn btn-secondary" type="button">All schools</button>'.html_safe, schools_path %>
+            <% end %>
+      </div>
     </div>
   </div>
 </div>
