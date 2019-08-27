@@ -1,10 +1,9 @@
 const mouseMove = () => {
 
   const cursor = document.getElementById("cursor-move");
-  const cursor2 = document.getElementById("cursor-move2");
 
   const windArray = JSON.parse(cursor.dataset.wind);
-  const swellArray = JSON.parse(cursor2.dataset.swell);
+  const swellArray = JSON.parse(cursor.dataset.swell);
 
   const timestamps = Object.keys(windArray, swellArray);
   const minTime = Number(timestamps[0]);
