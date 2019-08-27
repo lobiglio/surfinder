@@ -1,0 +1,17 @@
+function refreshForm(innerHTML) {
+  const newBookingForm = document.getElementById('formulaire');
+  newBookingForm.innerHTML = innerHTML;
+}
+
+function openModal() {
+  // selectionner et cliquer;;
+  const button = document.getElementById("modal-btn");
+  button.click();
+}
+
+<% if @booking.errors.any? %>
+  refreshForm('<%= j render "bookings/form", school: @school, booking: @booking %>');
+<% else %>
+  openModal();
+
+<% end %>
