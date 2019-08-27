@@ -9,3 +9,9 @@ import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 initMapbox();
 initAutocomplete();
 initAutocomplete2();
+
+const confirmation = document.querySelector(".confirmation");
+confirmation.addEventListener("submit", (event) => {
+  console.log(event);
+  console.log(event.currentTarget);
+});
