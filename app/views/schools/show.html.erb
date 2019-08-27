@@ -119,17 +119,17 @@
               <div class="card-product w-100">
                   <img id="avatar" class="avatar" alt="avatar" src="<%= review.booking.user.avatar %>" />
                   <div id="card-info" class="card-product-infos">
-                    <p><% rating = best.rating %>
+                    <p><% rating = review.rating %>
                 <% rating.times do %>
                   <i class="fas fa-star"></i>
                 <% end %>
                 <% (5-rating).times do %>
                   <i class="far fa-star"></i></p>
                 <% end %>
-                <p> <strong><%= best.booking.user.name %></strong>  <br>
-                <%= best.created_at.strftime("%B %Y") %> <br>
+                <p> <strong><%= review.booking.user.name %></strong>  <br>
+                <%= review.created_at.strftime("%B %Y") %> <br>
                 </p>
-                <p><%= best.content %></p>
+                <p><%= review.content %></p>
                   </div>
                 </div>
           <% else %>
