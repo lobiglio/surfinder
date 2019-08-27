@@ -7,10 +7,10 @@ class SurfForecastService
   def call
     @forecast = JSON.parse(HTTP.get(@url).to_s)
     {
-      timestamp: @forecast[0]["localTimestamp"],
-      swell: @forecast[0]["swell"]["components"]["primary"],
-      wind: @forecast[0]["wind"],
-      condition: @forecast[0]["condition"]["temperature"]
+      timestamp: @forecast[2]["localTimestamp"],
+      swell: @forecast[2]["swell"]["components"]["primary"],
+      wind: @forecast[2]["wind"],
+      condition: @forecast[2]["condition"]["temperature"]
     }
   end
 
@@ -21,6 +21,6 @@ class SurfForecastService
 
   def call_swell
     @url = "http://magicseaweed.com/api/e80fd637037c7379137bc52c070ca111/forecast/?spot_id=1531&fields=timestamp,swell.components.primary.direction"
-    JSON.parse(HTTP.get(@url).to_s).map { |l| [l["timestamp"], l["swell"]["components"]["primary"]["direction"]] }.to_h
+    JSON.parse(HTTP.get(@url).to_s).map { |l| [l["timestamp"], (l["swell"]["components"]["primary"]["direction"]).to_i] }.to_h
   end
 end
