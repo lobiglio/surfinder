@@ -56,8 +56,8 @@
               <% @school.packs.each do |pack|%>
                 <li><strong><%= pack.title %></strong> - <%= pack.price %>€/personne <br>
                   <%= pack.description %> <br>
-                  Limité à
-                  <%= pluralize pack.max_persons, "personne" %> <br>
+                  Limited to
+                  <%= pluralize pack.max_persons, "person" %> <br>
                 </li>
               <% end %>
             </ul>
