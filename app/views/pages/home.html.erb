@@ -1,4 +1,4 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,59,70,0.4),rgba(0,59,70,0.4)), url(<%= asset_path 'background-home.jpg' %>)"">
+<div class="banner" style="background-image: url(<%= asset_path 'background-home.jpg' %>)"">
 
 <div class="avatar-img">
   <%= link_to new_user_session_path, class: "navbar-brand pull-right" do %>
@@ -8,7 +8,7 @@
 
     <div class="container-home">
       <div class="banner-text text-center">
-        <h1 strong>SURFINDEЯ</strong></h1>
+        <h1><strong>SURFINDEЯ</strong></h1>
         <p id="titre-js"></p>
       </div>
       <div class = "container" id="input-home">
@@ -20,10 +20,18 @@
         <%= link_to '<button class="btn btn-secondary" type="button">All schools</button>'.html_safe, schools_path %>
       </button>
     </div>
-  </div>
+    <% end %>
 </div>
-        </div>
-      <% end %>
-    </div>
+
   </div>
+  <div class = "container" id="input-home">
+    <%= simple_form_for :search, url: schools_path, method: :get do |f| %>
+      <div class="d-flex justify-content-center">
+        <%= f.input :location, label: false  %>
+        <div class="input-group-append">
+          <%= f.submit :Search%>
+          <%= link_to '<button class="btn btn-secondary" type="button">All schools</button>'.html_safe, schools_path %>
+        </div>
+      </div>
+  <% end %>
 </div>
