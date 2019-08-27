@@ -52,8 +52,7 @@
     position: relative;
     margin-bottom: 16px;
     display: inline-block;
-    width: 400px;
-    margin-right:16px;
+    min-width: 300px;
     >.front,
     >.back {
       display: block;
