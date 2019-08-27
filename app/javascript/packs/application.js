@@ -12,6 +12,7 @@ initMapbox();
 initAutocomplete();
 initAutocomplete2();
 mouseMove();
+chartTrigger();
 
 
 

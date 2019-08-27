@@ -1,33 +1,35 @@
 const mouseMove = () => {
-
   const cursor = document.getElementById("cursor-move");
 
-  const windArray = JSON.parse(cursor.dataset.wind);
-  const swellArray = JSON.parse(cursor.dataset.swell);
+  if(cursor) {
 
-  const timestamps = Object.keys(windArray, swellArray);
-  const minTime = Number(timestamps[0]);
-  const maxTime = Number(timestamps[39]);
-  const minPixel = 172;
-  const maxPixel = 876;
-  const a = ( maxTime - minTime ) * 1.0 / ( maxPixel - minPixel );
-  const b = minTime - a * minPixel;
-  // console.log(maxTime);
-  const windElement = document.getElementById("wind");
-  const swellElement = document.getElementById("swell");
-  // console.dir(cursor);
-  cursor.addEventListener("mousemove", function(event) {
-    const x = event.clientX;
-    console.log(x)
-    // console.log(a * x + b);
-    const nearTime = findNearTime((a * x + b), timestamps);
-    console.log(nearTime);
-    // console.log(windArray[nearTime.toString()]);
-    console.log(swellArray[nearTime.toString()]);
+    const windArray = JSON.parse(cursor.dataset.wind);
+    const swellArray = JSON.parse(cursor.dataset.swell);
 
-    windElement.style.transform = `rotate(${windArray[nearTime.toString()]}deg)`;
-    swellElement.style.transform = `rotate(${swellArray[nearTime.toString()] + 180 }deg)`;
-  });
+    const timestamps = Object.keys(windArray, swellArray);
+    const minTime = Number(timestamps[0]);
+    const maxTime = Number(timestamps[39]);
+    const minPixel = 172;
+    const maxPixel = 876;
+    const a = ( maxTime - minTime ) * 1.0 / ( maxPixel - minPixel );
+    const b = minTime - a * minPixel;
+    // console.log(maxTime);
+    const windElement = document.getElementById("wind");
+    const swellElement = document.getElementById("swell");
+    // console.dir(cursor);
+    cursor.addEventListener("mousemove", function(event) {
+      const x = event.clientX;
+      console.log(x)
+      // console.log(a * x + b);
+      const nearTime = findNearTime((a * x + b), timestamps);
+      console.log(nearTime);
+      // console.log(windArray[nearTime.toString()]);
+      console.log(swellArray[nearTime.toString()]);
+
+      windElement.style.transform = `rotate(${windArray[nearTime.toString()]}deg)`;
+      swellElement.style.transform = `rotate(${swellArray[nearTime.toString()] + 180 }deg)`;
+    });
+  }
 };
 
 
