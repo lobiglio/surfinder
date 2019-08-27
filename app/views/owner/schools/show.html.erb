@@ -106,45 +106,45 @@
     </div>
     <div class="col-4">
       <% unless @reviews.empty? %>
-          <% bests = @reviews.where(rating: 5) %>
-          <% if bests.empty? %>
-            <% review = @reviews.order(:rating).last %>
-            <div class="card-product w-100">
-                <img id="avatar" class="avatar" alt="avatar" src="<%= review.booking.user.avatar %>" />
-                <div id="card-info" class="card-product-infos">
-                  <p><% rating = best.rating %>
-                <% rating.times do %>
-                  <i class="fas fa-star"></i>
-                <% end %>
-                <% (5-rating).times do %>
-                  <i class="far fa-star"></i></p>
-                <% end %>
-                <p> <strong><%= best.booking.user.name %></strong>  <br>
-                <%= best.created_at.strftime("%B %Y") %> <br>
-                </p>
-                <p><%= best.content %></p>
-                </div>
-              </div>
-          <% else %>
-            <% best = bests.sample %>
-            <div class="card-product w-100">
-              <img id="avatar" class="avatar" alt="avatar" src="<%= best.booking.user.avatar %>" />
-              <div id="card-info" class="card-product-infos">
-                <p><% rating = best.rating %>
-                <% rating.times do %>
-                  <i class="fas fa-star"></i>
-                <% end %>
-                <% (5-rating).times do %>
-                  <i class="far fa-star"></i></p>
-                <% end %>
-                <p> <strong><%= best.booking.user.name %></strong>  <br>
-                <%= best.created_at.strftime("%B %Y") %> <br>
-                </p>
-                <p><%= best.content %></p>
-              </div>
+        <% bests = @reviews.where(rating: 5) %>
+        <% if bests.empty? %>
+          <% review = @reviews.order(:rating).last %>
+          <div class="card-product w-100">
+            <img id="avatar" class="avatar" alt="avatar" src="<%= review.booking.user.avatar %>" />
+            <div id="card-info" class="card-product-infos">
+              <p><% rating = review.rating %>
+              <% rating.times do %>
+                <i class="fas fa-star"></i>
+              <% end %>
+              <% (5-rating).times do %>
+                <i class="far fa-star"></i></p>
+              <% end %>
+              <p> <strong><%= review.booking.user.name %></strong>  <br>
+              <%= review.created_at.strftime("%B %Y") %> <br>
+              </p>
+              <p><%= review.content %></p>
             </div>
-          <% end %>
+          </div>
+        <% else %>
+          <% best = bests.sample %>
+          <div class="card-product w-100">
+            <img id="avatar" class="avatar" alt="avatar" src="<%= best.booking.user.avatar %>" />
+            <div id="card-info" class="card-product-infos">
+              <p><% rating = best.rating %>
+              <% rating.times do %>
+                <i class="fas fa-star"></i>
+              <% end %>
+              <% (5-rating).times do %>
+                <i class="far fa-star"></i></p>
+              <% end %>
+              <p> <strong><%= best.booking.user.name %></strong>  <br>
+              <%= best.created_at.strftime("%B %Y") %> <br>
+              </p>
+              <p><%= best.content %></p>
+            </div>
+           </div>
         <% end %>
+      <% end %>
       <div class="fix-top-book-button">
       <div class= "book-button">
         <%= link_to "Edit your school", edit_owner_school_path(@school), class: "btn btn btn-gradient btn-ocean" %>
