@@ -15,3 +15,8 @@ initAutocomplete2();
 if (window.location.href === 'http://localhost:3000/' || window.location.href === 'https://surfinder-276.herokuapp.com/') {
   loadDynamicBannerText();
 }
+
+
+import { initStarRating } from '../plugins/init_star_rating';
+
+initStarRating();
