@@ -1,6 +1,15 @@
+.container-index {
+  padding: 15px;
+}
+
+.cards {
+  overflow: scroll;
+  height: 770px;
+}
+
 .card-product {
+  width: 500px;
   overflow: hidden;
-  height: 120px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
@@ -13,7 +22,6 @@
 
 .card-product img {
   height: 100%;
-  width: 120px;
   object-fit: cover;
 }
 
@@ -41,11 +49,15 @@
 
 .booking-img {
   border: solid 2px white;
+  border-radius: 5px;
+  height: 770px;
+  background-image: url("https://images.unsplash.com/photo-1520443240718-fce21901db79?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3334&q=80");
+  background-size: cover;
 }
 
 #booking-title {
   color: white;
-  padding-top: 32px;
+  padding-top:40px;
 }
 
 .card-text1 {
@@ -74,5 +86,51 @@
     height: 500px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.card-booking {
+  background-color: white;
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vh;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 4px;
+  padding: 12px;
+}
+
+.card-booking-text {
+  display: flex;
+  align-items: center;
+}
+
+.card-booking-text img {
+  width: 72px;
+  margin-right: 8px;
+}
+
+#schools-index {
+  text-align: center;
+}
+
+.card-title {
+  font-weight: bold;
+  color: #003B46;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.color-ocean {
+  color: #07575B;
+}
+
+.card-body a {
+  color: #66A5AD;
+}
+
+.card-body a:hover {
+  color: #003B46;
+  text-decoration: none;
 }
 

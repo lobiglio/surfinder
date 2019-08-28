@@ -6,7 +6,10 @@ import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import { mouseMove } from './weather_chart.js';
 import "./chart.js";
 import { chartTrigger } from "./chart-trigger.js"
+import { loadDynamicBannerText } from '../components/banner';
 import { initMapbox } from '../plugins/init_mapbox';
+
+
 
 
 initAutocomplete();
@@ -16,4 +19,7 @@ chartTrigger();
 initMapbox();
 
 
+if (window.location.href === 'http://localhost:3000/' || window.location.href === 'https://surfinder-276.herokuapp.com/') {
+  loadDynamicBannerText();
+}
 

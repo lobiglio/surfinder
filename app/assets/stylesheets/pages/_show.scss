@@ -41,7 +41,7 @@ a:hover {
 }
 
 .show-body, .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
-  background-color: #66A5AD;
+  background-color: white;
 }
 
 #myTabContent {
@@ -52,7 +52,7 @@ a:hover {
 
 .tab-content {
   border: 1px solid #DEE2E6;
-  border-top: 0px;
+  border-top: Opx;
   height: 400px;
   padding: 12px;
   padding-top: 32px;
@@ -71,7 +71,7 @@ a:hover {
 }
 
 .show-body {
-  background-color: #003B46;
+  background-color: #66A5AD;
 }
 
 #avatar {
@@ -93,12 +93,41 @@ a:hover {
   color: #66A5AD;
 }
 
-.card a {
+.nav-link {
+  color: white;
+}
+
+.review-card {
+border-bottom: 1px solid #66A5AD;
+margin-right: 40px;
+padding-bottom: 15px;
+}
+
+#packs > ul > li{
+border-bottom: 1px solid #66A5AD;
+margin-right: 40px;
+padding-bottom: 15px;
+}
+
+#review-text a {
   color: #66A5AD;
 }
 
-.reviews-tab {
-  margin: 0;
+.answer {
+  color: #66A5AD;
+}
+
+#carouselExampleSlidesOnly {
+  margin-bottom: 24px;
+}
+
+.commodities{
+  font-size:24px;
+  position: absolute;
+  bottom: 20px;
+  right: 40px;
+  letter-spacing: 4px;
+  color: #66A5AD;
 }
 
 #map {

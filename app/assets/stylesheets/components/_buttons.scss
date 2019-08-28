@@ -75,5 +75,76 @@
   position:absolute;
   left: 125px;
   top: 155px;
+}
 
+#book-now {
+  background: #fab07f;
+  border: 1px solid white;
+  font-size: 20px;
+  padding: 10px 20px;
+  position: relative;
+  animation-name: shake;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in;
+  cursor: pointer;
+
+}
+#book-now:hover {
+  animation-name: shakeAnim;
+}
+
+@keyframes shakeAnim {
+  0% {left: 0}
+  1% {left: -3px}
+  2% {left: 10px}
+  3% {left: -8px}
+  4% {left: 8px}
+  5% {left: -5px}
+  6% {left: 3px}
+  7% {left: 0}
+}
+
+@keyframes shake {
+  0% {left: 0}
+  1% {left: -3px}
+  2% {left: 10px}
+  3% {left: -8px}
+  4% {left: 8px}
+  5% {left: -5px}
+  6% {left: 3px}
+  7% {left: 0}
+}
+
+.book-button{
+  text-align: center;
+
+}
+
+.btn-accept {
+  background-color: #07575B;
+}
+
+.btn-refuse {
+  background-color: #b5525c;
+}
+
+.book-now-btn{
+    position:fixed;
+    text-align: center;
+    width:35%;
+    z-index:100;
+}
+
+.fix-top-book-button{
+    position:fixed;
+    text-align: center;
+    width:35%;
+    z-index:100;
+}
+
+body > div.page-site > div.show-body > div > div > div.col-4 > div.back > a > img{
+   width: 80px;
+   position: absolute;
+   bottom: 0;
 }

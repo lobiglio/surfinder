@@ -17,7 +17,6 @@
 .container-home{
   display:flex;
   flex-direction: column;
-  text-align: center;
   margin-right: 200px;
   margin-left: 200px;
 }
@@ -55,4 +54,28 @@ margin-top: 64px;
 
 #search_location{
   width: 400px;
+}
+
+.title-index {
+  color: white;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px #07575B;
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.collection_radio_buttons {
+  color: white;
+}
+
+.form-check-label {
+  color: white;
+}
+
+body > div > div > div.container-home > div.banner-text.text-center > h1 > strong{
+  font-size: 50px;
+}
+
+#titre-js{
+  color: #003B46;
 }

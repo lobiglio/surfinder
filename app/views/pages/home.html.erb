@@ -1,33 +1,24 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,59,70,0.4),rgba(0,59,70,0.4)), url(<%= asset_path 'background-home.jpg' %>)">
+<div class="banner" style="background-image: url(<%= asset_path 'background-home.jpg' %>)"">
 
-  <div class="avatar-img">
+<div class="avatar-img">
   <%= link_to new_user_session_path, class: "navbar-brand pull-right" do %>
     <%= image_tag "avatar-login.png"%>
-    <% end %>
-  </div>
+  <% end %>
+</div>
 
     <div class="container-home">
-      <div class="banner-text">
+      <div class="banner-text text-center">
         <h1><strong>SURFINDEЯ</strong></h1>
-        <p><i>Find the school that suits you.</i></p>
+        <p id="titre-js"></p>
       </div>
       <div class = "container" id="input-home">
       <%= simple_form_for :search, url: schools_path, method: :get do |f| %>
-          <!-- Another variation with a button -->
   <div class="d-flex justify-content-center">
-    <!-- <input type="text" class="form-control" id = "form-search-school" placeholder="Your location"> -->
     <%= f.input :location, label: false  %>
     <div class="input-group-append">
       <%= f.submit :Search%>
-<!-- <button class="btn btn-secondary" id="valid-address-btn" type="button">
-        <i class="fa fa-search"></i> -->
         <%= link_to '<button class="btn btn-secondary" type="button">All schools</button>'.html_safe, schools_path %>
       </button>
     </div>
-  </div>
-</div>
-        </div>
-      <% end %>
-    </div>
-  </div>
+    <% end %>
 </div>

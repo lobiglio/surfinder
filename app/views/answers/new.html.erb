@@ -1,14 +1,13 @@
 <div class="form min-vh-100">
   <div class = "col-sm-6" id="formulaire">
-    <h2 class="title-index">Write your review</h2>
-    <%= simple_form_for [@booking, @review] do |f| %>
+    <h2 class="title-index">Write your answer</h2>
+    <%= simple_form_for [@review, @answer] do |f| %>
     <div class="form-inputs">
       <%= f.input :content %>
-      <%= f.input :rating, collection: 1..5 %>
     </div>
     <div class="choice-btn">
       <%= f.button :submit, class: "btn btn-gradient btn-ocean" %>
-      <%= link_to 'Back', bookings_path, class: "btn btn-gradient" %>
+      <%= link_to 'Back', owner_school_path(@school), class: "btn btn-gradient" %>
     <% end %>
   </div>
 </div>

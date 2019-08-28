@@ -1,8 +1,30 @@
-<h1>My bookings</h1>
-
-<% @bookings.each do |booking| %>
-  <p>
-    Reservation : <%= booking.begin_at %> to <%= booking.end_at %><br>
-    <%= booking.progress %>
-  </p>
-<% end %>
+<div class="show-body">
+  <div class="container min-vh-100">
+    <h1 class="title-index">My bookings</h1>
+    <% @bookings.order(:begin_at).each do |booking| %>
+    <div class="card-booking">
+      <div class="card-booking-text">
+        <img src="<%= booking.user.avatar %>" alt="avatar person who reserved">
+        <div>
+          <p><%= booking.user.name %> reserved :</p>
+          <p><%= booking.pack.title %> for <%= pluralize booking.quantity, "person" %> <br>
+            to <%= booking.begin_at.strftime("%B %d, %Y") %> at <%= booking.end_at.strftime("%B %d, %Y") %><br>
+          Total : <% number_of_days = (booking.end_at - booking.begin_at).to_i %><%= number_of_days * booking.pack.price * booking.quantity %> €</p>
+            <p><strong><%= booking.progress.capitalize %></strong></p>
+          </p>
+        </div>
+      </div>
+      <div class="card-product-infos-progress">
+        <% if booking.pending?  %>
+          <%= link_to 'Accept', owner_booking_path(booking, progress: 1), method: :put, class: "btn btn-gradient btn-accept" %>
+          <%= link_to 'Refuse', owner_booking_path(booking, progress: 2), method: :put, class: "btn btn-gradient btn-refuse" %>
+        <% elsif booking.refused?%>
+          <%= link_to 'Accept', owner_booking_path(booking, progress: 1), method: :put, class: "btn btn-gradient btn-accept" %>
+        <% else %>
+          <%= link_to 'Refuse', owner_booking_path(booking, progress: 2), method: :put, class: "btn btn-gradient btn-refuse" %>
+        <% end %>
+      </div>
+      </div>
+    <% end %>
+  </div>
+</div>

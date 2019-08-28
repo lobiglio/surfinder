@@ -32,10 +32,15 @@
   }
 
 #map{
-  // z-index: 1;
-  // position: -webkit-sticky;
   position: sticky;
   top: 0px;
-  // width: 100%;
-    height: 100vh;
+  height: 100vh;
   }
+
+#map > div.mapboxgl-canvas-container.mapboxgl-interactive.mapboxgl-touch-drag-pan.mapboxgl-touch-zoom-rotate > canvas{
+  border-radius:8px;
+}
+
+.mapboxgl-canvas {
+  width: 100% !important;
+}

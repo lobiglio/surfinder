@@ -105,7 +105,7 @@
         </div>
       </div>
       <div class="col-4">
-<% unless @reviews.empty? %>
+        <% unless @reviews.empty? %>
             <% bests = @reviews.where(rating: 5) %>
             <% if bests.empty? %>
               <% review = @reviews.order(:rating).last %>

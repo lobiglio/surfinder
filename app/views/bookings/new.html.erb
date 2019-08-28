@@ -1,17 +1,29 @@
 <div class="form min-vh-100">
   <div class = "col-sm-6" id="formulaire">
-    <h2>Create your reservation</h2>
-    <%= simple_form_for [@school, @booking] do |f| %>
+    <%= render 'form', school: @school, booking: @booking %>
+  </div>
+</div>
 
-    <div class="form-inputs">
-      <%= f.input :pack_id, collection: @school.packs, as: :radio_buttons %>
-      <%= f.input :quantity, label: "Number of persons", collection: 1..8 %>
-      <%= f.input :begin_at, as: :string, required: false, input_html: {class: "datepicker"} %>
-      <%= f.input :end_at, as: :string, required: false, input_html: {class: "datepicker"} %>
+<!-- Button trigger modal -->
+<button type="button" id="modal-btn" class="btn btn-primary d-none" data-toggle="modal" data-target="#exampleModalCenter">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle"><strong>Thank you!</strong></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body"><strong>
+        Your booking is registered and a notification has been send to the surf school. <br>
+        A mail of confirmation will be sent in few hours.</strong><br>
+        <%= link_to "Ok", bookings_path, class: "btn btn-gradient btn-ocean" %>
+      </div>
     </div>
-    <div class="choice-btn">
-      <%= f.button :submit, class: "btn btn-gradient btn-ocean" %>
-      <%= link_to 'Back', school_path(@school), class: "btn btn-gradient" %>
-    <% end %>
   </div>
 </div>
