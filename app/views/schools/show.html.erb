@@ -60,7 +60,7 @@
           <% end %>
         <div class= "book-button">
           <div class = "book-now-btn">
-            <%= link_to "Book now!", new_school_booking_path(@school), class: "btn btn btn-gradient btn-ocean", id: "book-now"%>
+            <%= link_to "Book now!", new_school_booking_path(@school), class: "btn btn-gradient btn-ocean", id: "book-now"%>
           </div>
         </div>
       </div>
@@ -103,13 +103,6 @@
                   <%= pluralize pack.max_persons, "personne" %> <br>
                 </li>
               <% end %>
-            </ul>
-          </div>
-          <div class="tab-pane fade" id="spot" role="tabpanel" aria-labelledby="spot-tab">
-            <ul>
-              <li> Sand Beach Break</li>
-              <li> Good to surf all year round and every tides</li>
-              <li> Danger: tide currents</li>
             </ul>
           </div>
           <div class="tab-pane fade" id="forecast" role="tabpanel" aria-labelledby="forecast-tab">
