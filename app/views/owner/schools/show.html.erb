@@ -107,8 +107,9 @@
                   <i class="fas fa-star"></i>
                 <% end %>
                 <% (5-rating).times do %>
-                  <i class="far fa-star"></i></p>
+                  <i class="far fa-star"></i>
                 <% end %>
+                </p>
                 <p> <strong><%= review.booking.user.name %></strong>  <br>
                 <%= review.created_at.strftime("%B %Y") %> <br>
                 </p>
