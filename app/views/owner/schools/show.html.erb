@@ -117,7 +117,7 @@
                 </div>
           <% else %>
             <% best = bests.sample %>
-            <div class="card-product w-100">
+            <div class="card-product">
               <img id="avatar" class="avatar" alt="avatar" src="<%= best.booking.user.avatar %>" />
               <div id="card-info" class="card-product-infos">
                 <p><% rating = best.rating %>
@@ -125,8 +125,9 @@
                   <i class="fas fa-star"></i>
                 <% end %>
                 <% (5-rating).times do %>
-                  <i class="far fa-star"></i></p>
+                  <i class="far fa-star"></i>
                 <% end %>
+                </p>
                 <p> <strong><%= best.booking.user.name %></strong>  <br>
                 <%= best.created_at.strftime("%B %Y") %> <br>
                 </p>
