@@ -26,3 +26,4 @@ if (window.location.href === 'http://localhost:3000/' || window.location.href ==
 
 import { initStarRating } from '../plugins/init_star_rating';
 
+initStarRating();
