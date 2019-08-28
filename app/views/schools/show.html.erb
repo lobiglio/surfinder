@@ -116,16 +116,17 @@
             <% bests = @reviews.where(rating: 5) %>
             <% if bests.empty? %>
               <% review = @reviews.order(:rating).last %>
-              <div class="card-product w-100">
+              <div class="card-product">
                   <img id="avatar" class="avatar" alt="avatar" src="<%= review.booking.user.avatar %>" />
-                  <div id="card-info" class="card-product-infos">
+                  <div class="card-product-infos">
                     <p><% rating = review.rating %>
-                <% rating.times do %>
-                  <i class="fas fa-star"></i>
-                <% end %>
-                <% (5-rating).times do %>
-                  <i class="far fa-star"></i></p>
-                <% end %>
+                    <% rating.times do %>
+                      <i class="fas fa-star"></i>
+                    <% end %>
+                    <% (5-rating).times do %>
+                      <i class="far fa-star"></i>
+                    <% end %>
+                    </p>
                 <p> <strong><%= review.booking.user.name %></strong>  <br>
                 <%= review.created_at.strftime("%B %Y") %> <br>
                 </p>
