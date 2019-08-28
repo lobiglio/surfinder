@@ -21,7 +21,10 @@ class SchoolsController < ApplicationController
     @school = School.find(params[:id])
 
     @data = SurfForecastService.new("1531").call
-
+    @wind = SurfForecastService.new("1531").call_wind
+    @swell = SurfForecastService.new("1531").call_swell
+    @height = SurfForecastService.new("1531").call_height
+    @speed = SurfForecastService.new("1531").call_speed
     @reviews = @school.reviews
   end
 
