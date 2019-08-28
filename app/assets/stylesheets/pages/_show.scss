@@ -188,6 +188,7 @@ padding-bottom: 15px;
 
 .text-slide {
   text-align: center;
+  font-size: 10px;
 }
 
 .weather-chart {
@@ -213,4 +214,8 @@ padding-bottom: 15px;
   display: flex;
   justify-content: end;
   padding-top: 8px;
+}
+
+#chart-container {
+  padding-bottom: 16px;
 }

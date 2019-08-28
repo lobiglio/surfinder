@@ -1,5 +1,5 @@
 const mouseMove = () => {
-  const cursor = document.getElementById("cursor-move");
+  const cursor = document.getElementById("chart-container");
 
   if(cursor) {
 

@@ -1,6 +1,6 @@
 import Highcharts from 'highcharts';
 
-const cursor = document.getElementById("cursor-move");
+const cursor = document.getElementById("chart-container");
 require('highcharts/modules/exporting')(Highcharts);
 
 if(cursor) {
@@ -80,7 +80,7 @@ if(cursor) {
       tooltip: {
           headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
           pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-              '<td style="padding:0"><b>{point.y:.1f} m</b></td></tr>',
+              '<td style="padding:0"><b>{point.y:.1f} kph</b></td></tr>',
           footerFormat: '</table>',
           shared: true,
           useHTML: true
