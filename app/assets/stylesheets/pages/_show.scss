@@ -140,54 +140,6 @@ padding-bottom: 15px;
   color: #66A5AD;
 }
 
-#static-map {
-  width: 206px;
-  height: 206px;
-  position: relative;
-}
-
-.compass {
-  position: absolute;
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  // border: 3px dashed skyblue;
-  position: relative;
-  background-color: transparent;
-}
-
-#wind {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  transform: rotate(50deg);
-}
-
-#swell {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  transform: rotate(270deg);
-}
-
-#wind > .arrow {
-  border-bottom: 40px solid orange;
-}
-
-#swell .arrow {
-   border-bottom: 40px solid skyblue;
-}
-
-.arrow {
-  position: absolute;
-  left: calc(50% - 16px);
-  width: 0;
-  height: 0;
-  transform: rotate(180deg);
-  border-left: 16px solid transparent;
-  border-right: 16px solid transparent;
-}
-
 #cursor-move {
   width: 100%;
   height: 30px;
@@ -196,24 +148,8 @@ padding-bottom: 15px;
   background-color: #C4DFE6;
 }
 
-.text-slide {
-  text-align: center;
-  font-size: 10px;
-}
-
 .weather-chart {
   padding-top: 128px;
-}
-
-.shom {
-  display: flex;
-  justify-content: center;
-  padding-top: 24px;
-}
-
-.arrow-map {
-  display: flex;
-  justify-content: center;
 }
 
 .magic {
@@ -223,9 +159,19 @@ padding-bottom: 15px;
 .magic-logo {
   display: flex;
   justify-content: end;
-  padding-top: 8px;
+  padding-top: 3px;
 }
 
 #chart-container {
   padding-bottom: 16px;
+}
+
+.weather-card {
+  border-radius: 4px;
+}
+
+.weather-text {
+  text-align: center;
+  font-size: 12px;
+  padding-top: 8px;
 }
