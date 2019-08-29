@@ -3,7 +3,10 @@
     <h2 class="title-index">Write your answer</h2>
     <%= simple_form_for [@review, @answer] do |f| %>
     <div class="form-inputs">
-      <%= f.input :content %>
+      <div class="input-goup form-group text optional answer_content">
+        <i class="fas fa-pen answer-icon"></i>
+        <textarea class="input-class form-control text optional" placeholder="Content" name="answer[content]" id="answer_content"></textarea>
+      </div>
     </div>
     <div class="choice-btn">
       <%= f.button :submit, class: "btn btn-gradient btn-ocean" %>
