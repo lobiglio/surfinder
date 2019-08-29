@@ -80,8 +80,18 @@ a:hover {
   margin: 0px 4px;
 }
 
-#card-info {
-  border-left: 1px solid #AEAEAE;
+.avatar-container {
+  width: 85px;
+}
+
+.description-container {
+  width: 550px;
+  margin-left: 20px;
+  p {
+    width:100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
 
 
