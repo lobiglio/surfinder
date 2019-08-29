@@ -1,5 +1,5 @@
 <div class="form min-vh-100">
-  <div class = "col-sm-6" id="formulaire">
+  <div class = "col-sm-6 form-div" id="formulaire">
     <%= render 'form', school: @school, booking: @booking %>
   </div>
 </div>
@@ -20,8 +20,8 @@
         </button>
       </div>
       <div class="modal-body"><strong>
-        Your booking is registered and a notification has been send to the surf school. <br>
-        A mail of confirmation will be sent in few hours.</strong><br>
+        Your booking is registered and a notification has been transmit to the surf school. <br>
+        A confirmation mail will be sent in few hours.</strong><br>
         <%= link_to "Ok", bookings_path, class: "btn btn-gradient btn-ocean" %>
       </div>
     </div>
