@@ -5,8 +5,9 @@ import "../plugins/flatpickr"
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import { mouseMove } from './weather_chart.js';
 import "./chart.js";
-import { chartTrigger } from "./chart-trigger.js"
+// import { chartTrigger } from "./chart-trigger.js"
 import { loadDynamicBannerText } from '../components/banner';
+import "./book-btn.js";
 import { initMapbox } from '../plugins/init_mapbox';
 
 
@@ -15,7 +16,7 @@ import { initMapbox } from '../plugins/init_mapbox';
 initAutocomplete();
 initAutocomplete2();
 mouseMove();
-chartTrigger();
+// chartTrigger();
 initMapbox();
 
 
@@ -26,12 +27,4 @@ if (window.location.href === 'http://localhost:3000/' || window.location.href ==
 
 import { initStarRating } from '../plugins/init_star_rating';
 
-
-const bookBtn = document.querySelector(".book-now-btn");
-window.addEventListener('scroll', () => {
-  if (window.scrollY >= window.innerHeight / 1.7) {
-    bookBtn.classList.add('book-no-fixed');
-  } else {
-    bookBtn.classList.remove('book-no-fixed');
-  }
-});
+initStarRating();

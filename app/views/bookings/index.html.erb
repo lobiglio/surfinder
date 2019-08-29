@@ -16,7 +16,9 @@
               <p class="card-text1 color-ocean"> <strong>Total Price : </strong><% number_of_days = (booking.end_at - booking.begin_at).to_i %><%= number_of_days * booking.pack.price * booking.quantity %> € </p>
               <p class="card-text color-ocean"><strong>School Number : </strong><%= booking.pack.school.phone_number %></p>
               <p class="card-text color-ocean"> This reservation is <strong> <%= booking.progress %></strong>.</p>
+              <% if booking.reviews.empty? %>
               <%= link_to "Add a review", new_booking_review_path(booking) %>
+              <% end %>
             </div>
           </div>
         <% end %>

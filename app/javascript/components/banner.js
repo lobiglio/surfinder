@@ -5,7 +5,7 @@ import Typed from 'typed.js';
   new Typed('#titre-js', {
     strings: [ "Find your spot", "Find the school that suits you."],
     typeSpeed: 100,
-    loop: false,
+    loop: true,
     startDelay: 30,
     showCursor: false,
   });

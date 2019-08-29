@@ -38,11 +38,11 @@
                 <p><%= review.content %></p>
                   </div>
                 </div>
-          <% else %>
+            <% else %>
             <% best = bests.sample %>
-            <div class="card-product w-100">
+            <div class="card-product">
               <img id="avatar" class="avatar" alt="avatar" src="<%= best.booking.user.avatar %>" />
-              <div id="card-info" class="card-product-infos">
+              <div class="card-product-infos">
                 <p><% rating = best.rating %>
                 <% rating.times do %>
                   <i class="fas fa-star"></i>
@@ -58,32 +58,26 @@
             </div>
             <% end %>
           <% end %>
-        <div class= "book-button">
-          <div class = "book-now-btn">
-            <%= link_to "Book now!", new_school_booking_path(@school), class: "btn btn btn-gradient btn-ocean", id: "book-now"%>
+          <div class= "book-button">
+            <div class = "book-now-btn">
+              <%= link_to "Book now!", new_school_booking_path(@school), class: "btn btn-gradient btn-ocean", id: "book-now"%>
+            </div>
           </div>
-        </div>
       </div>
-      <div class="col-8">
+      <div class="col-6">
         <h1 class="school-title"><%= @school.name %></h1>
         <ul class="nav nav-tabs" id="myTab" role="tablist">
           <li class="nav-item">
-            <a class="nav-link select-tabs active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="Home" aria-selected="true">Description</a>
+            <a class="nav-link select-tabs active nav-custom" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="Home" aria-selected="true">Description</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link select-tabs" id="packs-tab" data-toggle="tab" href="#packs" role="tab" aria-controls="Packs" aria-selected="false">Packs</a>
+            <a class="nav-link select-tabs nav-custom" id="packs-tab" data-toggle="tab" href="#packs" role="tab" aria-controls="Packs" aria-selected="false">Packs</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link select-tabs" id="spot-tab" data-toggle="tab" href="#spot" role="tab" aria-controls="Spot" aria-selected="false">Spot</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link select-tabs" id="forecast-tab" data-toggle="tab" href="#forecast" role="tab" aria-controls="Forecast" aria-selected="false">Surf forecast</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link select-tabs" id="reviews-tab" data-toggle="tab" href="#reviews" role="tab" aria-controls="Reviews" aria-selected="false">Reviews</a>
+            <a class="nav-link select-tabs nav-custom" id="reviews-tab" data-toggle="tab" href="#reviews" role="tab" aria-controls="Reviews" aria-selected="false">Reviews</a>
           </li>
         </ul>
-        <div class="tab-content" id="myTabContent">
+        <div class="tab-content tab-custom" id="myTabContent">
           <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="Home-tab">
             <ul>
               <li> <strong>Location :</strong> <%= @school.address  %> </li>
@@ -105,31 +99,14 @@
               <% end %>
             </ul>
           </div>
-          <div class="tab-pane fade" id="spot" role="tabpanel" aria-labelledby="spot-tab">
-            <ul>
-              <li> Sand Beach Break</li>
-              <li> Good to surf all year round and every tides</li>
-              <li> Danger: tide currents</li>
-            </ul>
-          </div>
-          <div class="tab-pane fade" id="forecast" role="tabpanel" aria-labelledby="forecast-tab">
-            <p class="text-slide">- Slide your mouse in the bar below to see the forecast -</p>
-            <div id="cursor-move" data-wind="<%= @wind.to_json %>" data-swell="<%= @swell.to_json %>" data-height="<%= @height.to_json %>"data-speed="<%= @speed.to_json %>"></div>
-             <div div onmousemove="myFunction(event)"></div>
-            <div id="chart-container" style="width:100%; height:400px;"></div>
-            <div id="wind-chart-container" style="width:100%; height:400px;"></div>
-            <div class="magic-logo">
-            <a href="http://magicseaweed.com"><img class="magic" src="https://im-1-uk.msw.ms/msw_powered_by.png"></a>
-            </div>
-          </div>
           <div class="tab-pane fade" id="reviews" role="tabpanel" aria-labelledby="reviews-tab">
             <ul>
-              <% @reviews.order(:created_at).each do |review| %>
+              <% @reviews.order(:created_at).reverse.each do |review| %>
                 <li class="review-card">
-                  <div>
+                  <div class="avatar-container">
                     <img id="avatar" class="avatar" alt="avatar" src="<%= review.booking.user.avatar %>" />
                   </div>
-                  <div>
+                  <div class="description-container">
                     <p><% rating = review.rating %>
                 <% rating.times do %>
                   <i class="fas fa-star"></i>
@@ -150,21 +127,50 @@
           </div>
         </div>
       </div>
-      <div id="weather" class="col-4 weather-chart d-none">
-        <div class="arrow-map">
-          <div id="static-map" style="background-image: url('<%= image_path "view-hossegor.png"  %>')">
-            <div class="compass" style="background-image: url('<%= image_path "cadran-detoure.png"  %>')">
-              <div id="swell">
-                <div class="arrow"></div>
-              </div>
-              <div id="wind">
-                <div class="arrow"></div>
+      <div id="weather" class="col-6 weather-chart">
+        <div class="card weather-card">
+          <p class="weather-text">- Find below the surf forecast for your spot -</p>
+          <div class="d-flex">
+            <div class="shom d-inline-block p-2">
+              <script src="https://services.data.shom.fr/hdm/vignette/petite/BOUCAU-BAYONNE?locale=fr"></script>
+            </div>
+            <div class="arrow-map d-inline-block p-2">
+              <div id="static-map" style="background-image: url('<%= image_path "hossegor-map.png"  %>')">
+                <div class="compass-invisible">
+                  <div id="swell">
+                    <div class="arrow"></div>
+                  </div>
+                  <div id="wind">
+                    <div class="arrow"></div>
+                  </div>
+                </div>
+                <div class="compass-icon">
+                  <div class="compass-n-line"></div>
+                  <div class="compass-n">N</div>
+                  <div class="compass-e-line"></div>
+                  <div class="compass-e">E</div>
+                  <div class="compass-s-line"></div>
+                  <div class="compass-s">S</div>
+                  <div class="compass-w-line"></div>
+                  <div class="compass-w">W</div>
+                  <div class="compass-vert-line"></div>
+                  <div class="compass-horiz-line"></div>
+                </div>
               </div>
             </div>
           </div>
+
+
+          <div class="card-body">
+            <div id="chart-container" data-wind="<%= @wind.to_json %>" data-swell="<%= @swell.to_json %>" data-height="<%= @height.to_json %>"data-speed="<%= @speed.to_json %>" style="width:100%; height:400px;"></div>
+            <div onmousemove="myFunction(event)"></div>
+            <div id="wind-chart-container" style="width:100%; height:400px;"></div>
+            <div class="magic-logo">
+              <a href="http://magicseaweed.com"><img class="magic" src="https://im-1-uk.msw.ms/msw_powered_by.png"></a>
+            </div>
+          </div>
         </div>
-        <div class="shom">
-          <script src="https://services.data.shom.fr/hdm/vignette/petite/BOUCAU-BAYONNE?locale=fr"></script>
+
         </div>
       </div>
     </div>

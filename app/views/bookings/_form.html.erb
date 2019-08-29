@@ -3,7 +3,20 @@
 
     <div class="form-inputs">
       <%= f.input :pack_id, collection: school.packs, as: :radio_buttons %>
-      <%= f.input :quantity, label: "Number of persons", collection: 1..8 %>
+      <div class="input-group form-group select required booking_quantity">
+        <i class="fas fa-users"></i>
+        <select class="input-class form-control select required" placeholder="Number of persons" name="booking[quantity]" id="booking_quantity">
+          <option value=""></option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+        </select>
+      </div>
       <%= f.input :begin_at, as: :string, required: false, input_html: {class: "datepicker"} %>
       <%= f.input :end_at, as: :string, required: false, input_html: {class: "datepicker"} %>
     </div>
