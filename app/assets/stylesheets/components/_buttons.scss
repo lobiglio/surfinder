@@ -33,6 +33,18 @@
   margin-top:15px;
 }
 
+.btn-ocean-call-action {
+  background: #7b88ff;
+  margin-top:15px;
+}
+
+#btn-card {
+  background: #07575B !important;
+  margin-top:15px;
+  margin-left: 85px;
+}
+
+
 #input-home > form > div > div.input-group-append > input[type=submit]{
   color: white;
   padding: 6px 24px !important;
@@ -78,7 +90,8 @@
 }
 
 #book-now {
-  background: #fab07f;
+  // background: #614ad3;
+  background: #7b88ff;
   border: 1px solid white;
   font-size: 20px;
   padding: 10px 20px;
