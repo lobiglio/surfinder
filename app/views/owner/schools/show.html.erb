@@ -67,7 +67,7 @@
                   <div class="avatar-container">
                     <img id="avatar" class="avatar" alt="avatar" src="<%= review.booking.user.avatar %>" />
                   </div>
-                  <div id="review-text">
+                  <div class= "description-container" id="review-text">
                     <p><% rating = review.rating %>
                 <% rating.times do %>
                   <i class="fas fa-star"></i>
@@ -96,7 +96,7 @@
             <% bests = @reviews.where(rating: 5) %>
             <% if bests.empty? %>
               <% review = @reviews.order(:rating).last %>
-              <div class="card-product w-100">
+              <div class="card-product">
                   <img id="avatar" class="avatar" alt="avatar" src="<%= review.booking.user.avatar %>" />
                   <div id="card-info" class="card-product-infos">
                     <p><% rating = review.rating %>
