@@ -62,7 +62,7 @@
       background-position: center!important;
       height: 220px;
       // padding: 1em 2em;
-      background: #66A5AD;
+      background: #C4DFE6;
       border-radius: 8px;
       p {
         font-size: 0.9125rem;
@@ -90,5 +90,27 @@ text-shadow: 1px 1px rgba(0, 0, 0, 0.04), 2px 2px rgba(0, 0, 0, 0.04), 3px 3px r
 
 body > div.page-site > div.show-body > div > div > div.col-4 > div.card-product.w-100{
   margin-top: 0px;
+}
+
+#level-popup{
+  background-color: #C4DFE6;
+}
+
+.shaka-icon-pop-up{
+  width: 28px;
+}
+
+.more-info-pop-up
+{
+  background-color: #C4DFE6;
+  position: relative;
+  top: 142px;
+
+}
+
+.more-info-text{
+  color: #003B46;
+  font-size: 16px;
+  font-weight: bold;
 }
 
