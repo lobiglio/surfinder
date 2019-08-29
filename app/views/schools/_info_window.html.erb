@@ -1,3 +1,20 @@
    <div class="info-map" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= cl_image_path school.main_photo %>')">
-      <%= link_to 'More infos...', school_path(school)  %>
+
+      <div class = "level-card">
+<!--                 <p id="level-popup"> Level:</p> -->
+                <div class= "d-flex justify-content-center" id="level-popup">
+                  <h4 class= "level-popup"> <% level = school.level %>
+                  <% level.times do %>
+                    <%= image_tag "ShakaFull.png", class: "shaka-icon-pop-up" %>
+                   <% end %>
+                  <h4 class= "level-popup"> <% level = school.level %>
+                  <% (5-level).times do %>
+                    <%= image_tag "ShakaEmpty.png", class: "shaka-icon-pop-up" %>
+                  <% end %>
+                </div>
+              </div>
+              <div class="more-info-pop-up">
+                <%= link_to school.name, school_path(school),  class: "more-info-text"%>
+              </div>
+
     </div>
