@@ -1,5 +1,5 @@
 <div class="form min-vh-100">
-  <div class = "col-sm-6" id="formulaire">
+  <div class = "col-sm-6 form-div" id="formulaire">
     <h2 class="title-index">Sign up</h2>
 
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -9,22 +9,30 @@
         <%= f.input :name,
                     required: true,
                     autofocus: true,
-                    input_html: { autocomplete: "name" }%>
+                    input_html: { autocomplete: "name" },
+                    label: false,
+                    placeholder: "Name" %>
         <%= f.input :avatar, label: "Photo" %>
         <%= f.input :avatar_cache, as: :hidden %>
         <%= f.input :email,
                     placeholder: 'Email',
                     required: true,
                     autofocus: true,
-                    input_html: { autocomplete: "email" }%>
+                    input_html: { autocomplete: "email" },
+                    label: false,
+                    placeholder: "Email" %>
         <%= f.input :password,
                     required: true,
                     hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                    input_html: { autocomplete: "new-password" } %>
+                    input_html: { autocomplete: "new-password" },
+                    label: false,
+                    placeholder: "Password" %>
         <%= f.input :password_confirmation,
                     placeholder: 'Password Confirmation*',
                     required: true,
-                    input_html: { autocomplete: "new-password" } %>
+                    input_html: { autocomplete: "new-password" },
+                    label: false,
+                    placeholder: "Password confirmation" %>
         <%= f.input :role, collection: User.roles.keys.to_a, label: "Owner or customer?" %>
       </div>
 

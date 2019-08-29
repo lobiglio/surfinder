@@ -3,9 +3,28 @@
 
     <div class="form-inputs">
       <%= f.input :pack_id, collection: school.packs, as: :radio_buttons %>
-      <%= f.input :quantity, label: "Number of persons", collection: 1..8 %>
-      <%= f.input :begin_at, as: :string, required: false, input_html: {class: "datepicker"} %>
-      <%= f.input :end_at, as: :string, required: false, input_html: {class: "datepicker"} %>
+      <div class="input-group form-group select required booking_quantity">
+        <i class="fas fa-users"></i>
+        <select class="input-class form-control select required" placeholder="Number of persons" name="booking[quantity]" id="booking_quantity">
+          <option value=""></option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+        </select>
+      </div>
+      <div class="input-group form-group string optional booking_begin_at">
+        <i class="fas fa-calendar-alt"></i>
+        <input class="input-class form-control string optional datepicker flatpickr-input" placeholder="Begin at" type="hidden" name="booking[begin_at]" id="booking_begin_at">
+      </div>
+      <div class="input-group form-group string optional booking_end_at">
+        <i class="fas fa-calendar-alt"></i>
+        <input class="input-class form-control string optional datepicker form-control input" placeholder="End at" tabindex="0" type="text">
+      </div>
     </div>
     <div class="choice-btn">
       <%= f.button :submit, class: "btn btn-gradient btn-ocean confirmation" %>

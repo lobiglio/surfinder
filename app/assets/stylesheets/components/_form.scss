@@ -43,7 +43,7 @@ color: white;
 }
 
 .input-group {
-    position: relative;
+  position: relative;
     i {
     position: absolute;
     top: 10px;
@@ -56,4 +56,12 @@ color: white;
 .input-class {
     text-indent: 20px;
     width: 100%;
+}
+
+.answer-icon {
+  position: relative;
+    top: 30px;
+    left: 7px;
+    z-index: 2;
+    color: #5d5d5d;
 }
