@@ -136,6 +136,12 @@
     z-index:100;
 }
 
+.book-no-fixed {
+  position: absolute;
+  bottom: -123px;
+  width: 135%;
+}
+
 .fix-top-book-button{
     position:fixed;
     text-align: center;
