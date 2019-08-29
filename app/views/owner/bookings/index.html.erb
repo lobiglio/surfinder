@@ -4,7 +4,7 @@
     <% @bookings.order(:begin_at).each do |booking| %>
     <div class="card-booking">
       <div class="card-booking-text">
-        <img src="<%= booking.user.avatar %>" alt="avatar person who reserved">
+        <img src="<%= booking.user.avatar %>" alt="avatar person who reserved" class="avatar">
         <div>
           <p><%= booking.user.name %> reserved :</p>
           <p><%= booking.pack.title %> for <%= pluralize booking.quantity, "person" %> <br>
