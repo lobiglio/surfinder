@@ -1,7 +1,7 @@
 <div class="show-body">
   <div class="container min-vh-100">
     <h1 class="title-index">My bookings</h1>
-    <% @bookings.order(:begin_at).each do |booking| %>
+    <% @bookings.order(:created_at).reverse.each do |booking| %>
     <div class="card-booking">
       <div class="card-booking-text">
         <img src="<%= booking.user.avatar %>" alt="avatar person who reserved" class="avatar">
