@@ -5,7 +5,7 @@ import "../plugins/flatpickr"
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import { mouseMove } from './weather_chart.js';
 import "./chart.js";
-import { chartTrigger } from "./chart-trigger.js"
+// import { chartTrigger } from "./chart-trigger.js"
 import { loadDynamicBannerText } from '../components/banner';
 import { initMapbox } from '../plugins/init_mapbox';
 
@@ -15,7 +15,7 @@ import { initMapbox } from '../plugins/init_mapbox';
 initAutocomplete();
 initAutocomplete2();
 mouseMove();
-chartTrigger();
+// chartTrigger();
 initMapbox();
 
 
