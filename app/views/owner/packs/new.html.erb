@@ -1,13 +1,20 @@
 <div class="form min-vh-100">
-  <div class = "col-sm-6" id="formulaire">
+  <div class = "col-sm-6 form-div" id="formulaire">
     <h2 class="title-index">Create your packs</h2>
     <%= simple_form_for ["owner", @school, @pack] do |f| %>
       <div class="form-inputs">
-        <%= f.input :title %>
-        <%= f.input :description %>
-        <%= f.input :price, :input_html => { :type => "number" } %>
-        <%= f.input :max_persons, :input_html => { :type => "number" } %>
-
+        <div class="input-group form-group string optional pack_title">
+          <i class="fas fa-pen"></i>
+          <input class="input-class form-control string optional" placeholder="Title" type="text" name="pack[title]" id="pack_title"></div>
+        <div class="input-group form-group string required pack_description">
+          <i class="fas fa-pen"></i>
+          <input class="input-class form-control string required" placeholder="Description" type="text" name="pack[description]" id="pack_description"></div>
+        <div class="input-group form-group integer required pack_price">
+          <i class="fas fa-euro-sign"></i>
+          <input class="input-class form-control numeric integer required" type="number" placeholder="Price" step="1" name="pack[price]" id="pack_price"></div>
+        <div class="input-group form-group integer required pack_max_persons">
+          <i class="fas fa-users"></i>
+          <input class="input-class form-control numeric integer required" type="number" placeholder="Max persons" step="1" name="pack[max_persons]" id="pack_max_persons"></div>
       </div>
       <div class="choice-btn">
         <div class="form-actions">

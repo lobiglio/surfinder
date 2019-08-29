@@ -1,21 +1,21 @@
 <div class="form min-vh-100">
-  <div class = "col-sm-6" id="formulaire">
+  <div class = "col-sm-6 form-div" id="formulaire">
     <h2 class="title-index">Create your school</h2>
     <%= simple_form_for ["owner", @school] do |f| %>
       <div class="form-inputs">
-        <%= f.input :name %>
-        <%= f.input :address, input_html: { id: 'form-create-school' } %>
-        <%= f.input :description %>
+        <%= f.input :name, label: false, placeholder: "Name" %>
+        <%= f.input :address, input_html: { id: 'form-create-school' }, label: false, placeholder: "Address" %>
+        <%= f.input :description, label: false, placeholder: "Description" %>
         <%= f.input :main_photo, label: "Main photo" %>
         <%= f.input :main_photo_cache, as: :hidden %>
         <%= f.input :photo1, label: "Photo 1" %>
         <%= f.input :photo1_cache, as: :hidden %>
         <%= f.input :photo2, label: "Photo 2" %>
         <%= f.input :photo2_cache, as: :hidden %>
-        <%= f.input :phone_number %>
+        <%= f.input :phone_number, label: false, placeholder: "Phone number" %>
         <%= f.input :language, collection:["French", "English", "Spanish", "Deutsh", "Chinese"]%>
         <%= f.input :level, collection: 1..5 %>
-        <%= f.input :email %>
+        <%= f.input :email, label: false, placeholder: "Email" %>
       </div>
         <div class="choice-btn">
       <%= f.button :submit, class: "btn btn-gradient btn-ocean" %>
