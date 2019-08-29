@@ -1,12 +1,12 @@
 <div class="form min-vh-100">
-  <div class = "col-sm-6" id="formulaire">
+  <div class = "col-sm-6 form-div" id="formulaire">
     <h2 class="title-index">Update your packs</h2>
     <%= simple_form_for ["owner", @pack.school, @pack] do |f| %>
       <div class="form-inputs">
-        <%= f.input :title %>
-        <%= f.input :description %>
-        <%= f.input :price, :input_html => { :type => "number" } %>
-        <%= f.input :max_persons, :input_html => { :type => "number" } %>
+        <%= f.input :title, label: false, placeholder: "Title" %>
+        <%= f.input :description, label: false, placeholder: "Description" %>
+        <%= f.input :price, :input_html => { :type => "number" }, label: false, placeholder: "Price" %>
+        <%= f.input :max_persons, :input_html => { :type => "number" }, label: false, placeholder: "Max persons" %>
 
       </div>
       <div class="choice-btn">
