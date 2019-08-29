@@ -40,9 +40,9 @@
                 </div>
           <% else %>
             <% best = bests.sample %>
-            <div class="card-product w-100">
+            <div class="card-product">
               <img id="avatar" class="avatar" alt="avatar" src="<%= best.booking.user.avatar %>" />
-              <div id="card-info" class="card-product-infos">
+              <div class="card-product-infos">
                 <p><% rating = best.rating %>
                 <% rating.times do %>
                   <i class="fas fa-star"></i>
@@ -117,10 +117,10 @@
             <ul>
               <% @reviews.order(:created_at).reverse.each do |review| %>
                 <li class="review-card">
-                  <div>
+                  <div class="avatar-container">
                     <img id="avatar" class="avatar" alt="avatar" src="<%= review.booking.user.avatar %>" />
                   </div>
-                  <div>
+                  <div class="description-container">
                     <p><% rating = review.rating %>
                 <% rating.times do %>
                   <i class="fas fa-star"></i>
