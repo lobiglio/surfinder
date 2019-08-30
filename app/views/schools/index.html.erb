@@ -23,7 +23,9 @@
               </div>
              <p><%=school.address%></p>
              <div class= "d-flex justify-content-center">
-             <%= link_to '<button class="btn btn btn-gradient btn-ocean" id="btn-card" type="button">More infos...</button>'.html_safe, school_path(school) %>
+             <%#= link_to '<button class="btn btn btn-gradient btn-ocean" id="btn-card" type="button">More infos...</button>'.html_safe, school_path(school) %>
+             <%= link_to 'More infos...', school_path(school), class: "btn btn btn-gradient btn-ocean", id: "btn-card" %>
+
              </div>
             </div>
          </div>
