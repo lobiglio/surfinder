@@ -40,10 +40,11 @@
 
 #btn-card {
   background: #07575B !important;
-  margin-top:15px;
-  margin-left: 15px;
+  width: 200px;
+  position:absolute;
+  left: calc(50% - 100px);
+  top: 155px;
 }
-
 
 #input-home > form > div > div.input-group-append > input[type=submit]{
   color: white;
@@ -81,12 +82,6 @@
   background:#C4DFE6;
   color: #07575B;
   border: 1px solid #07575B !important;
-}
-
-#btn-card{
-  position:absolute;
-  left: 125px;
-  top: 155px;
 }
 
 #book-now {
